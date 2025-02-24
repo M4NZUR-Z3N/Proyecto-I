@@ -1,23 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bangers&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-header{
-    background-color: black;
-    height: 80px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-header a{
-    background-color: white;
-    height: 40px;
-    width: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body{
+    font-family: "Arvo", Arial, Helvetica, sans-serif;
 }
