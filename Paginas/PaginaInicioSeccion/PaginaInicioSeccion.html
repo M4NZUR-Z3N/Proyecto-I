@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="PaginaInicioSesion.css">
+    <link rel="stylesheet" type="text/css" href="/Paginas/PaginaGeneral/cssGeneral.css">
+    <title>Inicio de Sesion</title>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <div class="inicio"><!--Inicio de seccion de usuario-->
+            <form action="inicio_sesion" class="inicio_hijo">
+                <h2>Inicio de Sesión</h2>
+
+                <span class="formulario_inicio">
+                    <div class="correo">
+                        <input class="inp_correo" type="email" name="email" placeholder="Correo">
+                    </div>
+                    <div class="contraseña">
+                        <input class="inp_contra" type="password" name="password" placeholder="Contraseña">
+                        
+                    </div>
+                    <div class="rep_contra">
+                        <a href="#">¿Olvidaste tu Contraseña?</a>
+                    </div>
+                    <!--botones de inicio de sesion-->
+                    <div class="contenedor_buttons">
+                        
+                        <div class="button_inicio_sesion">
+                            <a href="#"><img src="" alt="">Iniciar Sesión</a>
+                        </div>
+                        <div>
+                            <div class="divisor_inicio"></div>
+                        </div>
+                        <div class="button_inicio_google">
+                            <a href="#"><img src="" alt="">Iniciar Sesión con Google</a>
+                        </div>
+                    </div>
+                    <!--botones de inicio de sesion-->
+
+                </span>
+            </form>
+        </div><!--Inicio de seccion de usuario-->
+
+        <div class="registro"><!--Registro de nuevos usuarios-->
+
+            <form action="registro_usuario" class="registro_hijo">
+                <h2 class="">Registrarse</h2>
+
+                <Span class="formulario_registro">
+
+                    <div class="nombre_registro">
+                        <label for="">Nombre</label>
+                        <input type="text" name="nombre" placeholder="Juan Andres">
+                    </div>
+
+                    <div class="apellidos_registro">
+                        <label for="">Apellidos</label>
+                        <input type="text" name="apellidos" placeholder="Castro Benavides">
+                    </div>
+
+                    <div class="cedula_registro">
+                        <label for="">Cedula</label>
+                        <input type="number" name="cedula" placeholder="1 1234 1234">
+                    </div>
+
+                    <div class="correo_registro">
+                        <label for="">Correo</label>
+                        <input type="email" name="correo" placeholder="correo@correo.com">
+                    </div>
+                    
+                    <div class="contraseña_registro">
+                        <label for="">Contraseña</label>
+                        <input type="password" name="password" placeholder="********">
+                    </div>
+
+                    <div class="confirmacion_contraseña">
+                        <label for="">Confirme su Contraseña</label>
+                        <input type="password" name="password" placeholder="********">
+                    </div>
+
+                    <div class="telefono_registro">
+                        <label for="">Telefono</label>
+                        <input type="number" name="telefono" placeholder="8282 8282">
+                    </div>
+
+                    <div class="distrito_registro">
+                        <p>Distrito</p>
+                        <select name="distrito">
+                            <option value="null"></option>
+                            <option value="Mercedes">Mercedes</option>
+                            <option value="Sabanilla">Sabanilla</option>
+                            <option value="San Pedro">San Pedro</option>
+                            <option value="San Rafael">San Rafael</option>
+                        </select>
+                    </div>
+
+                    <div class="direccion_registro">
+                        <label for="">Direccion de Domicilio</label>
+                        <input type="text" name="direccion">
+                    </div>
+
+                    <br>
+
+                    <div class="confirmacion_direccion">
+                        <textarea name="mapa" id="" placeholder="mapa"></textarea>
+                    </div>
+
+                    <div class="terminos_condiciones">
+                        <label for="">Al registrarse acepta los terminos y condiciones</label>
+                        <input type="checkbox" class="confirm_terminos_registro">
+                    </div>
+
+                </Span>
+            </form>      
+        </div><!--Registro de nuevos usuarios-->
+    </nav>
+    <footer></footer>
+</body>
+</html>
