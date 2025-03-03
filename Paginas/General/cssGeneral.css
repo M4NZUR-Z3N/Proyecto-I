@@ -24,8 +24,37 @@ header div{
     width: 1000px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    height: 40px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid fuchsia;
+}
+
+.menu li{
+    height: 100%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    border: 1px solid fuchsia;
 }
 
 .logo{
     height: 100%;
+}
+
+main{
+    padding: 60px;
+}
+
+footer{
+    background-color: black;
+    height: 80px;
 }
