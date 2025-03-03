@@ -1,52 +1,62 @@
- nav{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 800px;
-    margin: 0 auto;
+/*-----------------------Ajustes Generales-----------------------*/
+body{
+   /* background-image: url(../../Assets/MONTES\ DE\ OCA\ FONDO.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    */
+}
+
+.cont_general{
+    margin-top: 5%;
     display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10%;
     justify-content: center;
+    height: auto;
 }
 
 h2{
-    background-color: azure;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     margin-top: 48px;
 }
+
 a{
     text-decoration: none;
     color: black;
 }
 
-/*Parte de inicio de Sesion*/
-.inicio{
+.inicio, .registro{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.inicio_hijo{
-    height: 80%;
-    width: 500px;
-    background-color: rgba(217, 217, 217, 0.70);
+
+.inicio_hijo, .registro_hijo{
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(217, 217, 217, 0.85);
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    margin: 36px;
 }
 
-.formulario_inicio{
+.formulario_inicio, .formulario_registro{
     margin-top: 45px;
-    width: 90%;
-    background-color: aqua;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-
+/*-----------------------Fin Ajustes Generales-----------------------*/
+/*-----------------------inicio de Sesion-----------------------*/
 .correo, .contraseña{
     margin-top: 20px;
-    background-color: bisque;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,74 +64,90 @@ a{
 
 .inp_correo, .inp_contra{
     width: 100%;
-    height: 40px;
+    height: 50px;
+    font-size: large;
     border-style: none;
     border-radius: 12px;
-    
+    transition: 0.5s;
 }
 
 .rep_contra{
     margin-top: 2px;
     font-size: 12px;
-    background-color: beige;
     display: flex;
     flex-direction: column;
     align-items: end;
+    transition: 0.5s;
 }
 
 .contenedor_buttons{
-    margin-top: 35px;
-    background-color: blue;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .button_inicio_sesion, .button_inicio_google{
-    background-color: rgb(217, 217, 217);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(183, 183, 183);
     border-radius: 12px;
     margin: 15px;
-    padding: 5px;
-    font-size: 15px;
+    padding: 10px;
+    font-size: 18px;
+    transition: 0.5s;
 }
 
 .divisor_inicio{
     background-color: rgb(0, 0, 0);
-    height: 2px;
-    border-radius: 40px;
+    height: 1px;
+    border-radius: 100px;
     width: 400px;
 }
 
-
-/*Parte de Registro de usuarios*/
-.registro{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.icono_gmail{
+    margin-right: 10px ;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 10px;
 }
+/*-----------------------Fin inicio de Sesion-----------------------*/
 
-.formulario_registro{
-    height: 90%;
-    background-color: aquamarine;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.registro_hijo{
-    height: 80%;
-    width: 500px;
-    background-color: rgba(217, 217, 217, 0.70);
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: center;
-    border-radius: 15px;
-    margin: 36px;
-}
-
+/*-----------------------Registro de usuarios-----------------------*/
 .distrito_registro{
     width: 150px;
     display: flex;
     justify-content: space-between;
+}
+
+.formulario_registro #inp_registro{
+    width: 100%;
+    height: 30px;
+    font-size: large;
+    border-style: none;
+    border-radius: 8px;
+}
+
+.menu_distritos{
+    border-style: none;
+    border-radius: 8px;
+    height: 25px;
+}
+
+.distrito_registro{
+    margin-top: 5px;
+}
+/*-----------------------Fin Registro de usuarios-----------------------*/
+
+/*-----------------------Hover y Focus-----------------------*/
+
+.button_inicio_sesion:hover, .button_inicio_google:hover{
+    background-color: rgb(42, 81, 255);
+}
+
+input:focus{
+    background-color: rgb(102, 184, 255);
 }
