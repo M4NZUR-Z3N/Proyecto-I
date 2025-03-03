@@ -9,6 +9,11 @@
 
 body{
     font-family: "Arvo", Arial, Helvetica, sans-serif;
+    background-image: url(/Assets/FondoMontesDeOca.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header{
