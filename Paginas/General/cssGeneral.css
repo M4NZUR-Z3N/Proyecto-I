@@ -10,3 +10,22 @@
 body{
     font-family: "Arvo", Arial, Helvetica, sans-serif;
 }
+
+header{
+    background-color: black;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+header div{
+    background-color: aquamarine;
+    height: 100%;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 100%;
+}
