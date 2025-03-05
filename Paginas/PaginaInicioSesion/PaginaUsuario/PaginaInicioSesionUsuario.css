@@ -1,5 +1,8 @@
 /*-----------------------Ajustes Generales-----------------------*/
 
+*{
+    outline: none;
+}
 
 .cont_general{
     display: flex;
@@ -46,16 +49,17 @@ a{
 }
 /*-----------------------Fin Ajustes Generales-----------------------*/
 /*-----------------------inicio de Sesion-----------------------*/
-.correo, .contraseña{
+.grupo_inicio{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.inp_correo, .inp_contra{
+.inp_inicio{
     width: 100%;
     height: 50px;
+    padding-left: 10px;
     font-size: large;
     border-style: none;
     border-radius: 12px;
@@ -63,12 +67,15 @@ a{
 }
 
 .rep_contra{
-    margin-top: 2px;
+    margin-top: 5px;
     font-size: 12px;
     display: flex;
-    flex-direction: column;
-    align-items: end;
-    transition: 0.5s;
+    justify-content: end;
+}
+
+.rep_contra-button{
+    padding: 0 4px;
+    transition: 0.8s;
 }
 
 .contenedor_buttons{
@@ -78,7 +85,7 @@ a{
     align-items: center;
 }
 
-.button_inicio_sesion, .button_inicio_google{
+.buttons_formulario{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,14 +115,12 @@ a{
 /*-----------------------Fin inicio de Sesion-----------------------*/
 
 /*-----------------------Registro de usuarios-----------------------*/
-.distrito_registro{
-    width: 150px;
-    display: flex;
-    justify-content: space-between;
+.grupo_registro{
+    padding: 5px 0;
 }
-
-.formulario_registro #inp_registro{
-    width: 100%;
+.inp_registro{
+    padding-left: 10px;
+    width: 98%;
     height: 30px;
     font-size: large;
     border-style: none;
@@ -127,18 +132,21 @@ a{
     border-radius: 8px;
     height: 25px;
 }
-
-.distrito_registro{
-    margin-top: 5px;
-}
 /*-----------------------Fin Registro de usuarios-----------------------*/
 
 /*-----------------------Hover y Focus-----------------------*/
 
-.button_inicio_sesion:hover, .button_inicio_google:hover{
+.buttons_formulario:hover{
     background-color: rgb(42, 81, 255);
+    color: white;
 }
 
 input:focus{
     background-color: rgb(102, 184, 255);
+}
+
+.rep_contra-button:hover{
+    border-radius: 15px;
+    background-color: rgb(163, 163, 163);
+    font-size: 13px;
 }
