@@ -151,3 +151,11 @@ input:focus{
     background-color: rgb(163, 163, 163);
     font-size: 13px;
 }
+
+/*-----------------------CSS VALIDACION LLAMADO POR JS-----------------------*/
+/*
+.inp_registro{
+    background-color: rgb(255, 147, 147);
+    border: 2px solid rgb(255, 0, 0);  
+}
+*/
