@@ -1,9 +1,5 @@
 /*-----------------------Ajustes Generales-----------------------*/
 
-*{
-    outline: none;
-}
-
 .cont_general{
     display: flex;
     grid-template-columns: 1fr 1fr;
@@ -142,7 +138,8 @@ a{
 }
 
 input:focus{
-    background-color: rgb(102, 184, 255);
+    background-color: rgb(80, 178, 241);
+    opacity: 80%;
 }
 
 .rep_contra-button:hover{
