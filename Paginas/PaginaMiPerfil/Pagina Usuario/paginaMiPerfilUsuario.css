@@ -1,0 +1,59 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.miPerfil{
+    background-color: #0f1e49;
+    height: 450px;
+    width: 800px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 5px solid #b4dbff;
+}
+
+.bloquePerfil{
+    width: 100%;
+}
+
+.bloqueImagen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    color: #b4dbff;
+}
+
+.imagenMiPerfil{
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+}
+
+.bloqueDatos{
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bloqueInfo{
+    background-color: #b4dbff;
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.bloqueNormal{
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.bloqueDescripcion{
+    height: 200px;
+}

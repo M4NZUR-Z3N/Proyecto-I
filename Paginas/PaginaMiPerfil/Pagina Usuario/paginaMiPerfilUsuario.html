@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="paginaMiPerfilUsuario.css">
+    <link rel="stylesheet" href="/Paginas/General/cssGeneral.css">
+    <title>Mi Perfil</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("/Paginas/General/header.html");
+            $("#footer").load("/Paginas/General/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div class="miPerfil">
+            <div class="bloquePerfil bloqueImagen">
+                <h1>MI PERFIL</h1>
+                <img class="imagenMiPerfil" src="/Assets/ImagenMiPerfilVacio.png" alt="">
+            </div>
+            <div class="bloquePerfil bloqueDatos">
+                <p class="bloqueInfo bloqueNormal"><strong>Nombre: </strong><span id="nombre"></span></p>
+                <p class="bloqueInfo bloqueNormal"><strong>Telefono: </strong><span id="telefono"></span></p>
+                <p class="bloqueInfo bloqueNormal"><strong>Distrito: </strong><span id="distrito"></span></p>
+                <p class="bloqueInfo bloqueDescripcion"><strong>Descripcion: </strong><span id="descripcion"></span></p>
+            </div>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>
