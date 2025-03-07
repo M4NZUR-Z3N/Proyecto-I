@@ -78,6 +78,7 @@ header div{
 
 main{
     padding: 60px;
+    min-height: 80vh;
 }
 
 footer{
