@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bangers&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+}
+
+body{
+    font-family: "Arvo", Arial, Helvetica, sans-serif;
+    background-image: url(../img/FondoMontesDeOca.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: block;
+    justify-content: space-between;
+}
+
+header{
+    background-color:#0f1e49;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+header div{
+    height: 100%;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.logo{
+    background-color: #b4dbff;
+    border-radius: 10px;
+    height: 80%;
+}
+
+.menuToggle{
+    background-color: #b4dbff;
+    display: none;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.menu{
+    height: 40px;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuBtn{
+    height: 75%;
+    width: auto;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    background-color: #b4dbff;
+    color: #1d3893;
+    border-radius: 10px;
+}
+
+.menuBtn:hover{
+    background-color: #cce6ff;
+}
+
+main{
+    padding: 60px;
+    min-height: 80vh;
+}
+
+footer{
+    background-color: #0f1e49;
+    height: 80px;
+}
+
+@media(max-width: 900px){
+    .menuToggle{
+        display: block;
+    }
+
+    .menu{
+        display: none;
+    }
+}
