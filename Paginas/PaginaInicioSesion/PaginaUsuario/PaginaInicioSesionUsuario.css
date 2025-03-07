@@ -116,11 +116,15 @@ a{
 }
 .inp_registro{
     padding-left: 10px;
-    width: 98%;
+    width: 95%;
     height: 30px;
     font-size: large;
     border-style: none;
     border-radius: 8px;
+}
+
+#formulario_distritos{
+    width: 102%;
 }
 
 .menu_distritos{
