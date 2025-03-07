@@ -17,19 +17,35 @@ body{
 }
 
 header{
-    background-color: black;
+    background-color:#0f1e49;
     height: 80px;
     display: flex;
     justify-content: center;
 }
 
 header div{
-    background-color: aquamarine;
     height: 100%;
     width: 1000px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 10px;
+}
+
+.logo{
+    background-color: #b4dbff;
+    border-radius: 10px;
+    height: 80%;
+}
+
+.menuToggle{
+    background-color: #b4dbff;
+    display: none;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 .menu{
@@ -38,21 +54,23 @@ header div{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid fuchsia;
 }
 
-.menu li{
-    height: 100%;
-    width: 15%;
+.menuBtn{
+    height: 75%;
+    width: auto;
+    padding: 6px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     white-space: nowrap;
-    border: 1px solid fuchsia;
+    background-color: #b4dbff;
+    color: #1d3893;
+    border-radius: 10px;
 }
 
-.logo{
-    height: 100%;
+.menuBtn:hover{
+    background-color: #cce6ff;
 }
 
 main{
@@ -60,6 +78,16 @@ main{
 }
 
 footer{
-    background-color: black;
+    background-color: #0f1e49;
     height: 80px;
+}
+
+@media(max-width: 900px){
+    .menuToggle{
+        display: block;
+    }
+
+    .menu{
+        display: none;
+    }
 }
