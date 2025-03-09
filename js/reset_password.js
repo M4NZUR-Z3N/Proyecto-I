@@ -13,29 +13,29 @@ function togglePassword(inputId, iconId) {
     }
 }
 
-// Elementos de los inputs
+
 const passwordInput = document.getElementById("nueva_contraseña");
 const confirmPasswordInput = document.getElementById("confirmar_contraseña");
 
-// Elementos de los requisitos
+
 const lengthRequirement = document.getElementById("length");
 const numberRequirement = document.getElementById("number");
 const uppercaseRequirement = document.getElementById("uppercase");
 
-// Elemento donde se mostrará el mensaje de error si las contraseñas no coinciden
+
 const passwordRequirements = document.getElementById("password_requirements");
 const errorMessage = document.createElement("p");
 errorMessage.style.color = "red";
 errorMessage.style.fontWeight = "bold";
 errorMessage.style.marginTop = "10px";
-errorMessage.style.display = "none"; // Oculto por defecto
+errorMessage.style.display = "none"; 
 passwordRequirements.appendChild(errorMessage);
 
-// Función para validar los requisitos de la contraseña
+
 passwordInput.addEventListener("input", function () {
     const password = passwordInput.value;
 
-    // Validar longitud mínima
+    
     if (password.length >= 8) {
         lengthRequirement.innerHTML = "✅ 8 o más dígitos";
         lengthRequirement.classList.remove("invalid");
@@ -46,7 +46,7 @@ passwordInput.addEventListener("input", function () {
         lengthRequirement.classList.add("invalid");
     }
 
-    // Validar si tiene al menos un número
+    
     if (/\d/.test(password)) {
         numberRequirement.innerHTML = "✅ 1 o más números";
         numberRequirement.classList.remove("invalid");
@@ -57,7 +57,7 @@ passwordInput.addEventListener("input", function () {
         numberRequirement.classList.add("invalid");
     }
 
-    // Validar si tiene al menos una letra mayúscula
+    
     if (/[A-Z]/.test(password)) {
         uppercaseRequirement.innerHTML = "✅ 1 o más mayúsculas";
         uppercaseRequirement.classList.remove("invalid");
@@ -69,7 +69,7 @@ passwordInput.addEventListener("input", function () {
     }
 });
 
-// Función para validar si las contraseñas coinciden
+
 confirmPasswordInput.addEventListener("input", function () {
     if (passwordInput.value !== confirmPasswordInput.value) {
         errorMessage.innerHTML = "⚠️ Ambas contraseñas deben ser iguales, por favor verifica e intenta de nuevo.";
