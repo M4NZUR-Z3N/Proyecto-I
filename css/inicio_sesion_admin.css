@@ -1,9 +1,6 @@
-/*-----------------------Ajustes Generales-----------------------*/
-
+/*Ajustes generales*/
 .cont_general{
     display: flex;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10%;
     justify-content: center;
     height: auto;
 }
@@ -18,14 +15,15 @@ a{
     color: black;
 }
 
-.inicio, .registro{
+.inicio{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 40%;
 }
 
-.inicio_hijo, .registro_hijo{
+.inicio_hijo{
     height: auto;
     width: 100%;
     padding: 20px;
@@ -36,7 +34,7 @@ a{
     border-radius: 15px;
 }
 
-.formulario_inicio, .formulario_registro{
+.formulario_inicio{
     margin-top: 45px;
     width: 100%;
     display: flex;
@@ -93,49 +91,7 @@ a{
     transition: 0.5s;
 }
 
-.divisor_inicio{
-    background-color: rgb(0, 0, 0);
-    height: 1px;
-    border-radius: 100px;
-    width: 400px;
-}
-
-.icono_gmail{
-    margin-right: 10px ;
-    background-color: white;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    border-radius: 10px;
-}
-/*-----------------------Fin inicio de Sesion-----------------------*/
-
-/*-----------------------Registro de usuarios-----------------------*/
-.grupo_registro{
-    padding: 5px 0;
-}
-.inp_registro{
-    padding-left: 10px;
-    width: 95%;
-    height: 30px;
-    font-size: large;
-    border-style: none;
-    border-radius: 8px;
-}
-
-#formulario_distritos{
-    width: 102%;
-}
-
-.menu_distritos{
-    border-style: none;
-    border-radius: 8px;
-    height: 25px;
-}
-/*-----------------------Fin Registro de usuarios-----------------------*/
-
-/*-----------------------Hover y Focus-----------------------*/
-
+/* HOVER Y FOCUS */
 .buttons_formulario:hover{
     background-color: rgb(42, 81, 255);
     color: white;
@@ -151,11 +107,3 @@ input:focus{
     background-color: rgb(163, 163, 163);
     font-size: 13px;
 }
-
-/*-----------------------CSS VALIDACION LLAMADO POR JS-----------------------*/
-/*
-.inp_registro{
-    background-color: rgb(255, 147, 147);
-    border: 2px solid rgb(255, 0, 0);  
-}
-*/

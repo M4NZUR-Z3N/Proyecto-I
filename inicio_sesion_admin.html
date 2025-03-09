@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/inicio_sesion_admin.css">
+    <link rel="icon" href="img/LogoMuniPequeño.ico">
+    <title>Inicio de Sesion Municipalidad</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("general/header.html");
+            $("#footer").load("general/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <nav>
+            <div class="cont_general"><!--Contenedor general-->
+                <div class="inicio"><!--Inicio de seccion de usuario-->
+                    <form action="inicio_sesion" class="inicio_hijo">
+                        <h2>Inicio de Sesión</h2>
+    
+                        <span class="formulario_inicio">
+                            <div class="grupo_inicio">
+                                <input class="inp_inicio" type="email" name="email" placeholder="Correo">
+                            </div>
+
+                            <div class="grupo_inicio">
+                                <input class="inp_inicio" type="password" name="password" placeholder="Contraseña">
+                            </div>
+
+                            <div class="rec_contra">
+                                <a href="#" class="rec_contra-button">¿Olvidaste tu Contraseña?</a>
+                            </div>
+                            <!--botones de inicio de sesion-->
+                            <div class="contenedor_buttons">
+                                
+                                <div>
+                                    <a class="buttons_formulario" href="#"><img src="" alt="">Iniciar Sesión</a>
+                                </div>
+                            <!--botones de inicio de sesion-->
+    
+                        </span>
+                    </form>
+                </div><!--Inicio de seccion de usuario-->
+            </div><!--Contenedor general-->
+        </nav>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>
