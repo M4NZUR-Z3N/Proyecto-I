@@ -67,7 +67,6 @@ header div{
     justify-content: center;
     align-items: center;
     white-space: nowrap;
-    background-color: #ffffff;
     color: #1d3893;
     border-radius: 10px;
 }
@@ -79,6 +78,9 @@ header div{
 main{
     padding: 60px;
     min-height: 80vh;
+    box-shadow: 
+    inset 0px 10px 10px -5px #c7c7c7,
+    inset 0px -10px 10px -5px #c7c7c7;
 }
 
 footer{
@@ -86,7 +88,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0f1e49;
+    background-color: #ffffff;
     height: 180px;
 }
 
