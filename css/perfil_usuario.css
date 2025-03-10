@@ -11,7 +11,7 @@ main{
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
-    border: 5px solid #b4dbff;
+    box-shadow: 10px 10px 0px black;
 }
 
 .bloquePerfil{
@@ -42,7 +42,7 @@ main{
 }
 
 .bloqueInfo{
-    background-color: #b4dbff;
+    background-color: #f7f7f7;
     padding: 10px 20px;
     width: 300px;
     border-radius: 15px;
