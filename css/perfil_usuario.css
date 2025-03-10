@@ -5,7 +5,7 @@ main{
 }
 
 .miPerfil{
-    background-color: #0f1e49;
+    background-color: #1d3893;
     height: 450px;
     width: 800px;
     border-radius: 20px;
@@ -56,4 +56,19 @@ main{
 
 .bloqueDescripcion{
     height: 200px;
+}
+
+@media (max-width: 900px) {
+    .miPerfil{
+        height: 800px;
+        width: 450px;
+        border-radius: 20px;
+        display: block;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .bloqueDatos{
+        padding: 0px 60px;        
+        align-items: center;
+    }
 }
