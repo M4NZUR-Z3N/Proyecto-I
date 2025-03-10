@@ -10,10 +10,10 @@
 
 body{
     font-family: "Arvo", Arial, Helvetica, sans-serif;
-    background-image: url(../img/FondoMontesDeOca.jpg);
-    background-size: cover;
+    background-image: url(../img/FondoPagina.png);
+    background-size: 30%;
     height: 100vh;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: fixed;
     display: block;
     justify-content: space-between;
@@ -27,7 +27,7 @@ header{
 }
 
 header div{
-    height: 100%;
+    height: auto;
     width: 1000px;
     display: flex;
     justify-content: space-between;
@@ -60,7 +60,7 @@ header div{
 }
 
 .menuBtn{
-    height: 75%;
+    height: 80%;
     width: auto;
     padding: 6px 10px;
     display: flex;
