@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
+    <link rel="stylesheet" type="text/css" href="css/madre_usuario.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/LogoMuniPequeño.ico">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("general/header.html");
+            $("#footer").load("general/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="estructura">
+            <div class="mitad_pagina1">
+                <div class="avisos">
+                    <h2 class="titulo_avisos">Avisos</h2>
+                    <div class="aviso" id="aviso1">
+                        <h2>Nombre aviso</h2>
+                        <p>Se avisa que se va a ir el agua de 6am a 2pm</p>
+                    </div>
+                    <div class="aviso" id="aviso2">
+                        <h2>Nombre aviso</h2>
+                        <p>Se avisa que habra una reunion a las 3pm en el salon comunal</p>
+                    </div>
+                </div>
+                <div class="datos_montes_de_oca">
+                    <div class="datos quienes_somos">
+                        <h2>¿Quienes somos?</h2>
+                        <p>En la Municipalidad de Montes de Oca, trabajamos para mejorar la calidad de vida de nuestros habitantes, ofreciendo servicios públicos eficientes y promoviendo el desarrollo de nuestra comunidad.
+
+                            Somos un equipo comprometido con el bienestar del cantón, brindando atención en áreas clave como infraestructura, seguridad, recolección de residuos, medio ambiente, desarrollo social y mucho más.
+                            
+                            Queremos estar cerca de la gente, facilitando el acceso a información, trámites y herramientas para que cada vecino pueda participar activamente en la mejora de su entorno.
+                            
+                            A través de nuestra página web, puedes acceder a noticias, información de servicios municipales y realizar denuncias de forma rápida y sencilla.
+                        </p>
+                    </div>
+                    <div class="datos funciones">
+                    <h2>Nuestras funciones</h2>
+                        <p>📌 Administración y gestión del cantón - Planificamos el crecimiento y desarrollo sostenible de nuestra comunidad.</p>
+                        <p>📌 Servicios municipales - Mantenimiento de calles, recolección de residuos y  alumbrado publico.</p>    
+                        <p>📌 Atención ciudadana - Facilitamos trámites municipales y brindamos información sobre permisos, patentes y más.</p>
+                        <p>📌 Seguridad y orden público - Coordinamos esfuerzos para garantizar espacios seguros para la comunidad.</p>
+                        <p>📌 Gestión ambiental - Promovemos la protección del medio ambiente y el uso responsable de los recursos naturales.</p>
+                        <p>📌 Participación ciudadana - Escuchamos a nuestros vecinos y trabajamos juntos para construir un cantón mejor.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="mitadPagina2">
+                <div class="noticias">
+                    <div class="noticia" id="noticia1">
+                        <h2>Noticia 1</h2>
+                        <p>Contenido de la noticia</p>
+                    </div>
+                    <div class="noticia" id="noticia2">
+                        <h2>Noticia 2</h2>
+                        <p>Contenido de la noticia</p>
+                    </div>
+                    <div class="noticia" id="noticia3">
+                        <h2>Noticia 3</h2>
+                        <p>Contenido de la noticia</p>
+                    </div>
+                    <div class="noticia" id="noticia4">
+                        <h2>Noticia 4</h2>
+                        <p>Contenido de la noticia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer"></div>
+</body>
+</html>
