@@ -10,7 +10,7 @@
 
 body{
     font-family: "Arvo", Arial, Helvetica, sans-serif;
-    background-image: url(../img/FondoPagina.png);
+    background-color: #464646;
     background-size: 30%;
     height: 100vh;
     background-repeat: repeat;
@@ -21,7 +21,7 @@ body{
 
 header{
     background-color:#0f1e49;
-    height: 80px;
+    height: 90px;
     display: flex;
     justify-content: center;
 }
@@ -53,7 +53,7 @@ header div{
 
 .menu{
     height: 40px;
-    width: 500px;
+    width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,8 +82,12 @@ main{
 }
 
 footer{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #0f1e49;
-    height: 80px;
+    height: 180px;
 }
 
 @media(max-width: 900px){
