@@ -1,4 +1,6 @@
 .estructura {
+    height: auto;
+    width: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr auto;
@@ -7,7 +9,6 @@
 .mitad_pagina1{
     display: grid;
     grid-template-rows: auto 1fr;
-    height: 100vh;
 }
 
 .titulo_avisos {
