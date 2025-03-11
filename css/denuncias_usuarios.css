@@ -1,0 +1,40 @@
+.denun_1{
+    position: relative;
+    left: 2px;
+    top: 7px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #F0EFEE;
+    width: auto;
+    max-width: 95%;
+    height: auto;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.date{
+    position: relative;
+    top: -8px;
+    text-align: right;
+}
+
+.desc{
+    text-align: left;
+}
+
+.file_con{
+    background-color: blueviolet;
+}
+
+
+
+
+
+
+
+
+    
+
+
