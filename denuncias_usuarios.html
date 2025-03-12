@@ -1,10 +1,9 @@
-html:
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denuncias usuarios</title>
+    <title>Denuncias Usuarios</title>
     <link rel="stylesheet" href="./css/denuncias_usuarios.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -17,41 +16,72 @@ html:
     </script>
 </head>
 <body>
+
     <div id="header"></div>
 
     <section class="sec_denun">
-
-        <Div class="denun_1">
-
-            <div><p class="date"><strong>Fecha: </strong>03/10/2025</p></div>
-
-            <div><p class="desc"><strong>Descripcion:</strong> Problemas con la basura de la zona</p></div>
-
-            <div>
-                <label for="btn_file">
-                    Adjuntar archivo
-                </label>
-                <input type="file" id="Imagen" accept="imagen/*">
+        
+        <div class="denun">
+            <p class="date">Fecha: 03/10/2024</p>
+            <p class="desc"><strong>Descripción:</strong> Problemas con la basura de la zona</p>
+            <div class="file_con">
+                <label for="file1">Adjuntar archivo:</label>
+                <input type="file" id="file1" accept="image/*">
             </div>
+            <div class="button_container">
+                <button class="Edit_denu">Editar</button>
+                <button class="anular_denu">Anular</button>
+            </div>
+        </div>
 
-            <button class="Edit_denu">Editar</button>
+        <div class="denun">
+            <p class="date">Fecha: 19/10/2024</p>
+            <p class="desc"><strong>Descripción:</strong> Vecino no tiene permiso de construccion</p>
+            <div class="file_con">
+                <label for="file2">Adjuntar archivo:</label>
+                <input type="file" id="file2" accept="image/*">
+            </div>
+            <div class="button_container">
+                <button class="Edit_denu">Editar</button>
+                <button class="anular_denu">Anular</button>
+            </div>
+        </div>
 
-            <button class="anular_denu">Anular</button>
-            
+        <div class="denun">
+            <p class="date">Fecha: 03/10/2025</p>
+            <p class="desc"><strong>Descripción:</strong> Problemas con la basura de la zona</p>
+            <div class="file_con">
+                <label for="file3">Adjuntar archivo:</label>
+                <input type="file" id="file3" accept="image/*">
+            </div>
+            <div class="button_container">
+                <button class="Edit_denu">Editar</button>
+                <button class="anular_denu">Anular</button>
+            </div>
+        </div>
 
-        </Div>
-
+        <div class="denun">
+            <p class="date">Fecha: 03/10/2025</p>
+            <p class="desc"><strong>Descripción:</strong> Problemas con la basura de la zona</p>
+            <div class="file_con">
+                <label for="file3">Adjuntar archivo:</label>
+                <input type="file" id="file3" accept="image/*">
+            </div>
+            <div class="button_container">
+                <button class="Edit_denu">Editar</button>
+                <button class="anular_denu">Anular</button>
+            </div>
+        </div>
 
     </section>
 
     <section class="add_denun">
-
-      <div class="gen_den">
-        <a href="">Generar denunbcia</a>
-      </div>  
-
+        <div class="gen_den">
+            <a href="#">Generar denuncia</a>
+        </div>  
     </section>
 
     <div id="footer"></div>
+
 </body>
 </html>

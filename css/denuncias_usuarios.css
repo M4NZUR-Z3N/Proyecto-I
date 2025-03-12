@@ -1,40 +1,103 @@
-.denun_1{
-    position: relative;
-    left: 2px;
-    top: 7px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: #F0EFEE;
-    width: auto;
-    max-width: 95%;
-    height: auto;
+
+.sec_denun {
+    max-height: 500px;
+    overflow-y: auto;
     padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin: 20px auto;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.denun {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    position: relative;
+    margin: 10px auto;
+    background-color: #F0EFEE;
+    width: 95%;
+    padding: 15px;
     border: 1px solid grey;
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
-.date{
-    position: relative;
-    top: -8px;
+.date {
     text-align: right;
+    font-weight: bold;
 }
 
-.desc{
+.desc {
     text-align: left;
 }
 
-.file_con{
-    background-color: blueviolet;
+.file_con {
+    margin-top: auto; 
+    padding-top: 10px;
+    text-align: left;
 }
 
+.file_con input {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
+.button_container {
+    text-align: right;
+    margin-top: 10px;
+}
 
+.button_container button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
 
-
-
-
-
+.Edit_denu {
+    background-color: #d5d7da;
+    color: black;
     
+}
 
+.Edit_denu:hover {
+    background-color: #d5d7da;
+    transform: scale(1.05);
+}
 
+.anular_denu {
+    background-color: #d5d7da;
+    color: black;
+    margin-left: 10px;
+}
+
+.anular_denu:hover {
+    background-color: #d5d7da;
+    transform: scale(1.05);
+}
+
+.add_denun {
+    text-align: center;
+    background-color: #F0EFEE;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.gen_den a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.gen_den a:hover {
+    color: darkblue;
+}
