@@ -16,127 +16,122 @@
     </script>
 </head>
 <body>
-    <div id="header"></div>
+<div id="header"></div>
     <main>
-        <nav>
-            <div class="cont_general"><!--Contenedor general-->
-                <div class="inicio"><!--Inicio de seccion de usuario-->
-                    <form action="inicio_sesion" class="inicio_hijo">
-                        <h2>Inicio de Sesión</h2>
-    
-                        <span class="formulario_inicio">
-                            <div class="grupo_inicio">
-                                <input class="inp_inicio" type="email" name="email" placeholder="Correo">
-                            </div>
+        <nav class="cont_general"><!--Contenedor general-->
+            <form action="inicio_sesion" class="inicio"><!--Inicio de seccion de usuario-->
+                <h2>Inicio de Sesión</h2>
 
-                            <div class="grupo_inicio">
-                                <input class="inp_inicio" type="password" name="password" placeholder="Contraseña">
-                            </div>
+                <span class="formulario_inicio">
+                    <!-- Correo inicio -->
+                    <div class="grupo_inicio">
+                        <input class="inp_inicio" type="email" name="email" placeholder="Correo">
+                    </div>
+                    <!-- Password inicio -->
+                    <div class="grupo_inicio">
+                        <input class="inp_inicio" type="password" name="password" placeholder="Contraseña">
+                    </div>
+                    <!-- Password recovery -->
+                    <div class="rec_contra">
+                        <a href="forgot_password.html" class="rec_contra-button">¿Olvidaste tu Contraseña?</a>
+                    </div>
+                    <!-- Boton inicio sesion -->
+                    <div class="contenedor_buttons">
+                        <a class="buttons_formulario" href="#" id="inicio_sesion_btn">Iniciar Sesión</a>
+                    </div>
+                    <!-- Una rayita para mas estetica -->
+                    <div class="contenedor_buttons">
+                        <div class="divisor_inicio">
+                            <span id="circle"></span>
+                        </div>
+                    </div>
+                    <!-- Boton de inicio de Sesion con Google -->
+                    <div class="contenedor_buttons">
+                        <a class="buttons_formulario" href="#" id="inicio_google_btn"><img class="icono_gmail" src="img/gmail.png" alt="Icono de Gmail">Iniciar Sesión con Google</a>
+                    </div >
+                </span>
+            </form><!--Inicio de seccion de usuario Fin-->
 
-                            <div class="rec_contra">
-                                <a href="forgot_password.html" class="rec_contra-button">¿Olvidaste tu Contraseña?</a>
-                            </div>
-                            <!--botones de inicio de sesion-->
-                            <div class="contenedor_buttons">
-                                
-                                <div>
-                                    <a class="buttons_formulario" href="#"><img src="" alt="">Iniciar Sesión</a>
-                                </div>
+                    <!-- Boton para ir al formulario de Registro -->
+                        <div class="contenedor_buttons">
+                            <input type="checkbox" id="check">
+                            <label for="check" class="btn_registro" >
+                                Registrarse
+                            </label>
+                        </div>
 
-                                <div>
-                                    <div class="divisor_inicio">
-                                        <span id="circle"></span>
-                                    </div>
-                                </div>
+            <form action="registro_usuario" class="registro"><!--Registro de nuevos usuarios-->
+                <h2 class="">Registrarse</h2>
 
-                                <div>
-                                    <a class="buttons_formulario" href="#"><img class="icono_gmail" src="img/gmail.png" alt="Icono de Gmail">Iniciar Sesión con Google</a>
-                                </div>
-                            </div>
-                            <!--botones de inicio de sesion-->
-    
-                        </span>
-                    </form>
-                </div><!--Inicio de seccion de usuario-->
-    
-                <div class="registro"><!--Registro de nuevos usuarios-->
-    
-                    <form action="registro_usuario" class="registro_hijo">
+                <Span class="formulario_registro">
+                    <!-- Nombre Usuario -->
+                    <div class="grupo_registro" id="formulario_nombre">
+                        <label for="formulario_nombre" class="formulario_label">Nombre</label>
+                        <input class="inp_registro" type="text" name="nombre" placeholder="Juan Andres">
+                    </div>
+                    <!-- Apellidos Usuario -->
+                    <div class="grupo_registro" id="formulario_apellidos">
+                        <label for="formulario_apellidos" class="formulario_label">Apellidos</label>
+                        <input class="inp_registro" type="text" name="apellidos" placeholder="Castro Benavides">
+                    </div>
+                    <!-- Cedula Usuario -->
+                    <div class="grupo_registro" id="formulario_cedula">
+                        <label for="formulario_cedula" class="formulario_label">Cedula</label>
+                        <input class="inp_registro" type="number" name="cedula" placeholder="1 1234 1234">
+                    </div>
+                    <!-- Correo Usuario -->
+                    <div class="grupo_registro" id="formulario_correo">
+                        <label for="formulario_correo" class="formulario_label">Correo</label>
+                        <input class="inp_registro" type="email" name="correo" placeholder="correo@correo.com">
+                    </div>
+                    <!-- Password Usuario -->
+                    <div class="grupo_registro" id="formulario_password">
+                        <label for="formulario_password" class="formulario_label">Contraseña</label>
+                        <input class="inp_registro" type="password" name="password" placeholder="********">
+                    </div>
+                    <!-- Confirmacion Password Usuario -->
+                    <div class="grupo_registro" id="formulario_password2">
+                        <label for="formulario_password2" class="formulario_label">Confirme su Contraseña</label>
+                        <input class="inp_registro" type="password" name="password2" placeholder="********">
+                    </div>
+                    <!-- Telefono Usuario -->
+                    <div class="grupo_registro" id="formulario_telefono">
+                        <label for="formulario_telefono" class="formulario_label">Telefono</label>
+                        <input class="inp_registro" type="number" name="telefono" placeholder="8282 8282">
+                    </div>
+                    <!-- Distrito Usuario -->
+                    <div class="grupo_registro" id="formulario_distritos">
+                        <p>Distrito</p>
+                        <select class="inp_registro" name="distrito">
+                            <option value="null"></option>
+                            <option value="Mercedes">Mercedes</option>
+                            <option value="Sabanilla">Sabanilla</option>
+                            <option value="San Pedro">San Pedro</option>
+                            <option value="San Rafael">San Rafael</option>
+                        </select>
+                    </div>
+                    <!-- Direccion Usuario -->
+                    <div class="grupo_registro" id="formulario_direccion">
+                        <label for="formulario_direccion">Direccion de Domicilio</label>
+                        <input class="inp_registro" type="text" name="direccion">
+                    </div>
 
-                        <h2 class="">Registrarse</h2>
-    
-                        <Span class="formulario_registro">
-    
-                            <div class="grupo_registro" id="formulario_nombre">
-                                <label class="formulario_label">Nombre</label>
-                                <input class="inp_registro" type="text" name="nombre" placeholder="Juan Andres">
-                            </div>
-    
-                            <div class="grupo_registro" id="formulario_apellidos">
-                                <label class="formulario_label">Apellidos</label>
-                                <input class="inp_registro" type="text" name="apellidos" placeholder="Castro Benavides">
-                            </div>
-    
-                            <div class="grupo_registro" id="formulario_cedula">
-                                <label class="formulario_label">Cedula</label>
-                                <input class="inp_registro" type="number" name="cedula" placeholder="1 1234 1234">
-                            </div>
-    
-                            <div class="grupo_registro" id="formulario_correo">
-                                <label class="formulario_label">Correo</label>
-                                <input class="inp_registro" type="email" name="correo" placeholder="correo@correo.com">
-                            </div>
-                            
-                            <div class="grupo_registro" id="formulario_password">
-                                <label class="formulario_label">Contraseña</label>
-                                <input class="inp_registro" type="password" name="password" placeholder="********">
-                            </div>
-    
-                            <div class="grupo_registro" id="formulario_password2">
-                                <label class="formulario_label">Confirme su Contraseña</label>
-                                <input class="inp_registro" type="password" name="password2" placeholder="********">
-                            </div>
-    
-                            <div class="grupo_registro" id="formulario_telefono">
-                                <label class="formulario_label">Telefono</label>
-                                <input class="inp_registro" type="number" name="telefono" placeholder="8282 8282">
-                            </div>
-    
-                            <div class="grupo_registro" id="formulario_distritos">
-                                <p>Distrito</p>
-                                <select class="inp_registro" name="distrito">
-                                    <option value="null"></option>
-                                    <option value="Mercedes">Mercedes</option>
-                                    <option value="Sabanilla">Sabanilla</option>
-                                    <option value="San Pedro">San Pedro</option>
-                                    <option value="San Rafael">San Rafael</option>
-                                </select>
-                            </div>
-    
-                            <div class="grupo_registro" id="formulario_direccion">
-                                <label for="">Direccion de Domicilio</label>
-                                <input class="inp_registro" type="text" name="direccion">
-                            </div>
-    
-                            <!--<div class="grupo_registro" id="formulario_>
-                                <textarea name="mapa" id="" placeholder="mapa"></textarea>
-                            </div>-->
-    
-                            <div class="grupo_registro" id="formulario_condiciones">
-                                <input type="checkbox" class="confirm_terminos_registro">
-                                <b href="#">Al registrarse acepta los terminos y condiciones</b>
-                            </div>
-    
-                            <div>
-                                <a class="buttons_formulario" href="#"><img src="" alt="">Registrarse</a>
-                            </div>
-    
-                        </Span>
-                    </form>      
-                </div><!--Registro de nuevos usuarios-->
-            </div><!--Contenedor general-->
-        </nav>
+                    <!--<div class="grupo_registro" id="formulario_>
+                        <textarea name="mapa" id="" placeholder="mapa"></textarea>
+                    </div>-->
+                    <!-- Terminos y Condiciones -->
+                    <div class="grupo_registro" id="formulario_condiciones">
+                        <input type="checkbox" class="confirm_terminos_registro">
+                        <b href="#">Al registrarse acepta los terminos y condiciones</b>
+                    </div>
+                    <!-- Boton de Registro de Usuario -->
+                    <div>
+                        <a class="buttons_formulario" href="#"><img src="" alt="">Registrarse</a>
+                    </div>
+                </Span>
+            </form><!--Registro de nuevos usuarios-->
+        </nav><!--Contenedor general-->
     </main>
-    <div id="footer"></div>
+<div id="footer"></div>
 </body>
 </html>
