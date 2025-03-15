@@ -26,6 +26,7 @@ a{
     height: auto;
     width: 30%;
     padding: 20px;
+    box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
     background-color: rgba(217, 217, 217, 0.85);
     border-radius: 15px;
 }
@@ -59,6 +60,7 @@ a{
 /*-----------------------Fin Ajustes Generales-----------------------*/
 /*-----------------------inicio de Sesion-----------------------*/
 .grupo_inicio{
+    position: relative;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -75,6 +77,13 @@ a{
     transition: 0.5s;
 }
 
+.inp_error{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    opacity: 1;
+}
 .rec_contra{
     margin-top: 5px;
     font-size: 12px;
@@ -118,7 +127,46 @@ a{
     transition: 0.5s;
 }
 
+.formulario__input-error{
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(251, 93, 93);
+    color: rgb(0, 0, 0);
+    display: none;
+    transition: 0.8s;
+}
 /*-----------------------Fin inicio de Sesion-----------------------*/
+
+
+/*-----------------------Hover y Focus-----------------------*/
+
+.buttons_formulario:hover{
+    background-color: rgb(42, 81, 255);
+    color: white;
+}
+
+.btn_registro:hover{
+    background-color: rgb(42, 81, 255);
+    color: white;
+}
+
+input:focus{
+    background-color: rgb(80, 178, 241);
+    opacity: 80%;
+}
+
+.rec_contra-button:hover{
+    border-radius: 15px;
+    background-color: rgb(163, 163, 163);
+    font-size: 13px;
+}
+
+/*-----------------------CSS LLAMADO POR JS-----------------------*/
+
+.formulario__input-error-activo{
+    display: block;
+}
 
 /*-----------------------Registro de usuarios-----------------------*/
 .grupo_registro{
@@ -143,29 +191,6 @@ a{
     height: 25px;
 }
 /*-----------------------Fin Registro de usuarios-----------------------*/
-
-/*-----------------------Hover y Focus-----------------------*/
-
-.buttons_formulario:hover{
-    background-color: rgb(42, 81, 255);
-    color: white;
-}
-
-.btn_registro:hover{
-    background-color: rgb(42, 81, 255);
-    color: white;
-}
-
-input:focus{
-    background-color: rgb(80, 178, 241);
-    opacity: 80%;
-}
-
-.rec_contra-button:hover{
-    border-radius: 15px;
-    background-color: rgb(163, 163, 163);
-    font-size: 13px;
-}
 
 /* Responsive */
 
@@ -196,11 +221,3 @@ input:focus{
         display: flex;
     }
 }
-
-/*-----------------------CSS VALIDACION LLAMADO POR JS-----------------------*/
-/*
-.inp_registro{
-    background-color: rgb(255, 147, 147);
-    border: 2px solid rgb(255, 0, 0);  
-}
-*/

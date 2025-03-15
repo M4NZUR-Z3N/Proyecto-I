@@ -8,6 +8,7 @@
     <link rel="icon" href="img/LogoMuniPequeño.ico">
     <title>Inicio de Sesion</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script>
         $(function(){
             $("#header").load("general/header.html");
@@ -19,36 +20,52 @@
 <div id="header"></div>
     <main>
         <nav class="cont_general"><!--Contenedor general-->
-            <form action="inicio_sesion" class="inicio"><!--Inicio de seccion de usuario-->
+            <form action="inicio_sesion" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
+
                 <h2>Inicio de Sesión</h2>
 
                 <span class="formulario_inicio">
+
                     <!-- Correo inicio -->
-                    <div class="grupo_inicio">
-                        <input class="inp_inicio" type="email" name="email" placeholder="Correo">
+                    <div class="grupo_inicio" id="grupo_email">
+                        <input class="inp_inicio" id="inp_email" type="email" name="email" placeholder="Correo">
+                        <p class="formulario__input-error">
+                            El correo ingresado no es valido
+                        </p>
                     </div>
+                        
+
                     <!-- Password inicio -->
-                    <div class="grupo_inicio">
-                        <input class="inp_inicio" type="password" name="password" placeholder="Contraseña">
+                    <div class="grupo_inicio" id="grupo_password">
+                        <input class="inp_inicio" id="inp_password" type="password" name="password" placeholder="Contraseña">
+                        <p class="formulario__input-error">
+                            La contraseña ingresada no es valida.
+                        </p>
+                        <!-- <button href="#"><i class='inp_error bx bx-low-vision'></i><i class='inp_error bx bxs-low-vision'></i></button>  botones para visualizar la contraseña -->
                     </div>
+                        
+
                     <!-- Password recovery -->
                     <div class="rec_contra">
                         <a href="forgot_password.html" class="rec_contra-button">¿Olvidaste tu Contraseña?</a>
                     </div>
+                    
                     <!-- Boton inicio sesion -->
                     <div class="contenedor_buttons">
                         <a class="buttons_formulario" href="#" id="inicio_sesion_btn">Iniciar Sesión</a>
                     </div>
+
                     <!-- Una rayita para mas estetica -->
                     <div class="contenedor_buttons">
                         <div class="divisor_inicio">
                             <span id="circle"></span>
                         </div>
                     </div>
+
                     <!-- Boton de inicio de Sesion con Google -->
                     <div class="contenedor_buttons">
                         <a class="buttons_formulario" href="#" id="inicio_google_btn"><img class="icono_gmail" src="img/gmail.png" alt="Icono de Gmail">Iniciar Sesión con Google</a>
-                    </div >
+                    </div>
                 </span>
             </form><!--Inicio de seccion de usuario Fin-->
 
@@ -132,6 +149,8 @@
             </form><!--Registro de nuevos usuarios-->
         </nav><!--Contenedor general-->
     </main>
+
 <div id="footer"></div>
+<script src="/js/inicio_sesion_usuario.js"></script>
 </body>
 </html>
