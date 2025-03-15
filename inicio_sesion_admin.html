@@ -16,40 +16,33 @@
     </script>
 </head>
 <body>
-    <div id="header"></div>
+<div id="header"></div>
     <main>
-        <nav>
-            <div class="cont_general"><!--Contenedor general-->
-                <div class="inicio"><!--Inicio de seccion de usuario-->
-                    <form action="inicio_sesion" class="inicio_hijo">
-                        <h2>Inicio de Sesión</h2>
-    
-                        <span class="formulario_inicio">
-                            <div class="grupo_inicio">
-                                <input class="inp_inicio" type="email" name="email" placeholder="Correo">
-                            </div>
+        <nav class="cont_general"><!--Contenedor general-->
+            <form action="inicio_sesion" class="inicio"><!--Inicio de seccion de usuario-->
+                <h2>Inicio de Sesión</h2>
 
-                            <div class="grupo_inicio">
-                                <input class="inp_inicio" type="password" name="password" placeholder="Contraseña">
-                            </div>
-
-                            <div class="rec_contra">
-                                <a href="#" class="rec_contra-button">¿Olvidaste tu Contraseña?</a>
-                            </div>
-                            <!--botones de inicio de sesion-->
-                            <div class="contenedor_buttons">
-                                
-                                <div>
-                                    <a class="buttons_formulario" href="#"><img src="" alt="">Iniciar Sesión</a>
-                                </div>
-                            <!--botones de inicio de sesion-->
-    
-                        </span>
-                    </form>
-                </div><!--Inicio de seccion de usuario-->
-            </div><!--Contenedor general-->
-        </nav>
+                <span class="formulario_inicio">
+                    <!-- Grupo Correo -->
+                    <div class="grupo_inicio">
+                        <input class="inp_inicio" type="email" name="email" placeholder="Correo">
+                    </div>
+                    <!-- Grupo Password -->
+                    <div class="grupo_inicio">
+                        <input class="inp_inicio" type="password" name="password" placeholder="Contraseña">
+                    </div>
+                    <!-- Password Recovery Admin -->
+                    <div class="rec_contra">
+                        <a href="#" class="rec_contra-button">¿Olvidaste tu Contraseña?</a>
+                    </div>
+                    <!--boton de inicio de sesion-->
+                    <div class="contenedor_buttons"></div>
+                        <a class="buttons_formulario" href="#"><img src="" alt="">Iniciar Sesión</a>
+                    </div>
+                </span>
+            </form><!--Inicio de seccion de usuario-->
+        </nav><!--Contenedor general-->
     </main>
-    <div id="footer"></div>
+<div id="footer"></div>
 </body>
 </html>

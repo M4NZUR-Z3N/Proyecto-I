@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/noticias_avisos_admin.css">
+    <link rel="icon" href="img/LogoMuniPequeño.ico">
+    <title>Noticias/Avisos Municipalidad</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("general/header.html");
+            $("#footer").load("general/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div class="cont_general"><!--contenedor creador de noticias y avisos-->
+            <h1>Generar Noticia o Aviso</h1>
+                <div class="grupo_noticias-avisos" id="cont_seleccion">
+                    <p>¿Que deseas hacer?</p>
+                    <label for="">
+                        <input type="radio" name="crear_noticia-aviso" class="opciones" id="crear_noticia">Noticia
+                    </label>
+                    <label for="">
+                        <input type="radio" name="crear_noticia-aviso" class="opciones" id="crear_aviso">Aviso
+                    </label>
+                </div>
+
+                <div class="grupo_noticias-avisos" id="cont_titulo">
+                    <label for="" id="titulo_noticia">Titulo:</label>
+                    <input type="text" name="Titulo de la Noticia" class="inp_noticias-avisos" id="titulo_noticia-aviso_inp">
+                </div>
+
+                <div class="grupo_noticias-avisos" id="cont_fecha_publicacion">
+                    <label for="">Fecha de publicacion:
+                    <p><input type="checkbox" name="fecha_publicacion">Publicar Ahora</p>
+                    </label>
+                    <label for="">
+                    <input type="date" name="fecha_publicacion" class="inp_noticias-avisos" id="fecha_publicacion-noticia"> <!--Este elemento tiene que ser modificado por medio de JS si el checkbox es seleccionado se tiene que eliminar-->
+                    </label>
+                </div>
+
+                <div class="grupo_noticias-avisos" id="cont_descripcion">
+                    <label for="">Descripción:
+                    <textarea type="text" name="Descripcion noticia" class="inp_noticias-avisos" placeholder="Descripcion" id="descripcion_noticia-aviso"></textarea>
+                    </label>
+                </div>
+
+                <div class="grupo_noticias-avisos" id="cont_inp-archivos">
+                    <input type="file" name="Imagen noticia" class="inp_noticias-avisos" id="inp_descripcion">
+                </div>
+
+                <div class="grupo_noticias-avisos" id="cont_botones"><!--botones-->
+                    <a href="#" name="Publicar" class="botones_noticias-avisos" id="boton_publicar">Publicar</a>
+                    <a href="#" name="Eliminar" class="botones_noticias-avisos" id="boton_eliminar">Eliminar</a>
+                </div>
+        </div><!--contenedor creador de noticias y avisos-->
+    </main>
+    <div id="footer"></div>
+</body>
+</html>
