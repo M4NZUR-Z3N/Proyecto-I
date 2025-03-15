@@ -7,7 +7,6 @@
 .mitad_pagina1{
     display: grid;
     grid-template-rows: auto 1fr;
-    height: 100vh;
 }
 
 .titulo_avisos {
@@ -24,8 +23,7 @@
 .aviso {
     margin-left: 10px;
     width: 90%;
-    background-color: #ccc;
-    border: 1px solid #ccc;
+    background-color: #cce6ff;
     max-width: 90%;
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -52,7 +50,7 @@
 
 .datos {
     padding: 10px;
-    background-color: #ccc;
+    background-color: #cce6ff;
     border-radius: 5px;
     margin: 5px;
     margin-top: 10px;
@@ -60,6 +58,10 @@
 
 .quienes_somos {
     margin-top: auto;
+}
+
+.quienes_somos h2{
+    margin-bottom: 10px;
 }
 
 .funciones p{
@@ -83,8 +85,7 @@
 .noticia {
     margin: 10px;
     width: 90%;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: #cce6ff;
     border-radius: 5px;
     padding: 10px; 
 }
