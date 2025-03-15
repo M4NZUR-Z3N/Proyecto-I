@@ -1,0 +1,85 @@
+.pagina{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 20px;
+}
+
+.servicios{
+    position: relative;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #cce6ff;
+    border: 5px solid #b4dbff;
+}
+
+.descripcion{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
+
+.servicios_dados{
+    margin-left: 5px;
+}
+
+.titulos{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.bx{
+    font-size: 20px;
+}
+
+.datos{
+    width: 100%;
+    position: absolute; 
+    top: 100%;
+    left: 0;
+    transition: max-height 0.6s ease;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #cce6ff;
+    border: 5px solid #b4dbff;
+    width: calc(100% - 10px);
+    margin: 0 ;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.checkbox{
+    display: none;
+}
+
+#check_deportes:checked ~ .datos,
+#check_persona_joven:checked ~ .datos,
+#check_alianzas:checked ~ .datos,
+#check_emergencias:checked ~ .datos,
+#check_comercio:checked ~ .datos,
+#check_integral:checked ~ .datos,
+#check_infraestructura:checked ~ .datos,
+#check_cementerios:checked ~ .datos,
+#check_ambiental:checked ~ .datos,
+#check_residuos:checked ~ .datos,
+#check_parques:checked ~ .datos,
+#check_mantenimiento:checked ~ .datos,
+#check_inspeccion:checked ~ .datos,
+#check_vial:checked ~ .datos,
+#check_monitoreo:checked ~ .datos {
+    max-height: 300px;
+    z-index: 2;
+    overflow: auto;
+}
+
+ul{
+    padding-left: 20px;
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+.servicios_dados p {
+    margin-bottom: 5px
+}
