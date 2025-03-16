@@ -17,19 +17,24 @@
 <body>
     <div id="header"></div>
     <main>
-        <div class="miPerfil">
-            <div class="bloquePerfil bloqueImagen">
+        <div class="perfil">
+            <div class="perfil__bloque perfil__bloque--imagen">
                 <h1>MI PERFIL</h1>
-                <img class="imagenMiPerfil" src="img/ImagenMiPerfilVacio.png" alt="">
+                <img class="perfil__imagen" src="img/ImagenMiPerfilVacio.png" alt="">
             </div>
-            <div class="bloquePerfil bloqueDatos">
-                <p class="bloqueInfo bloqueNormal"><strong>Nombre: </strong><span id="nombre"></span></p>
-                <p class="bloqueInfo bloqueNormal"><strong>Telefono: </strong><span id="telefono"></span></p>
-                <p class="bloqueInfo bloqueNormal"><strong>Distrito: </strong><span id="distrito"></span></p>
-                <p class="bloqueInfo bloqueDescripcion"><strong>Descripcion: </strong><span id="descripcion"></span></p>
+            <div class="perfil__bloque perfil__bloque--datos">
+                <p class="perfil__info perfil__info--normal"><strong>Nombre: </strong><span id="nombre" class="perfil__dato perfil__dato--visualizar-activo">Michael Jackson</span><input type="text" class="perfil__dato perfil__dato--edicion-inactivo"></p>
+                <p class="perfil__info perfil__info--normal"><strong>Teléfono: </strong><span id="telefono" class="perfil__dato perfil__dato--visualizar-activo">88573643</span><input type="text" class="perfil__dato perfil__dato--edicion-inactivo"></p>
+                <p class="perfil__info perfil__info--normal"><strong>Distrito: </strong><span id="distrito" class="perfil__dato perfil__dato--visualizar-activo"></span><input type="text" class="perfil__dato perfil__dato--edicion-inactivo"></p>
+                <p class="perfil__info perfil__info--descripcion"><strong>Descripción: </strong><br><span id="descripcion" class="perfil__dato perfil__dato--visualizar-activo"></span><input type="text" class="perfil__dato perfil__dato--edicion-inactivo"></p>
             </div>
+        </div>
+        <div class="perfil__botones">
+            <button class="perfil__boton perfil__boton--editar">Editar</button>
+            <button class="perfil__boton perfil__boton--cerrar-sesion">Cerrar Sesión</button>
         </div>
     </main>
     <div id="footer"></div>
+    <script src="js/perfil_usuario_edicion.js"></script>
 </body>
 </html>
