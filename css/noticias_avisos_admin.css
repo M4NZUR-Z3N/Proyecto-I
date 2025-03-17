@@ -1,7 +1,12 @@
+/* General */
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+p{
+    font-size: 22px;
 }
 
 .cont_general{
@@ -12,25 +17,37 @@ main{
     flex-direction: column;
     padding: 20px;
     border-radius: 15px;
+    box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
 }
 
+
 .grupo_noticias-avisos{
-    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
     width: 96%;
     font-size: 20px;
     padding: 10px 0;
 }
 
+.grupo_noticias-avisos label{
+    padding: 5px 0;
+}
+/* General */
+
+/* Seleccion de noticia o aviso */
+#cont_seleccion{
+    display: flex;
+    flex-direction: row;
+}
+
+.opciones{
+    margin-left: 15px;
+}
+
 .inp_noticias-avisos{
-    background-color: antiquewhite;
     border: none;
     border-radius: 5px;
     font-size: 15px;
-}
-
-#cont_fecha_publicacion{
-    background-color: aquamarine;
-    display: flex;
 }
 
 #cont_titulo{
@@ -53,24 +70,51 @@ main{
     padding: 10px;
 }
 
-.botones_noticias-avisos{
-    color: #1d3893;
+#cont_botones{
+    display: block;
+    margin-top: 10px;
+}
+
+.boton_noticias-avisos{
+    cursor: pointer;
+    display: block;
+    color: rgb(29, 56, 147);
     border-style: none;
     border-radius: 12px;
-    margin: 15px;
-    padding: 10px 20px;
+    padding: 10px 40px;
     font-size: 18px;
     transition: 0.5s;
-    background-color: aqua;
+    background-color: rgb(183, 183, 183);
 }
 
-#cont_botones{
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    background-color: blue;
+#mensaje_confirmacion{
+    display: none;
 }
 
-#fecha_publicacion-noticia{
-    padding: 5px;
+/* Hover y Focus */
+
+.boton_noticias-avisos:hover{
+    background-color: rgb(42, 81, 255);
+    color:white;
+}
+
+input:focus, textarea:focus{
+    background-color: rgb(80, 178, 241);
+    opacity: 80%;
+}
+
+/* Responsive */
+
+@media(max-width:900px) {
+
+    #cont_seleccion{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* CSS llamado por JS */
+
+#mensaje_condirmacion-activo{
+    display: block;
 }
