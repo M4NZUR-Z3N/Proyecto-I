@@ -35,7 +35,7 @@ header div{
     margin: 0 10px;
 }
 
-.logo{
+.logoHeader{
     background-color: #ffffff;
     border-radius: 10px;
     height: 80%;
@@ -86,18 +86,40 @@ main{
 footer{
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: center;   
     align-items: center;
     background-color: #ffffff;
     height: 180px;
 }
 
-@media(max-width: 900px){
+.bloque__footer{
+    height: auto;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoFooter{
+    height: 100px;
+}
+
+.mapaFooter{
+    border-radius: 5px;
+    height: 150px;
+    width: auto;
+}
+
+@media(max-width: 1000px){
     .menuToggle{
         display: block;
     }
 
     .menu{
+        display: none;
+    }
+
+    .logoFooter{
         display: none;
     }
 }
