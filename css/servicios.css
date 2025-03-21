@@ -67,7 +67,7 @@
 #check_inspeccion:checked ~ .datos,
 #check_vial:checked ~ .datos,
 #check_monitoreo:checked ~ .datos {
-    max-height: 300px;
+    max-height: 200px;
     z-index: 2;
     overflow: auto;
 }
