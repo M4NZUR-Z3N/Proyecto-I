@@ -8,6 +8,7 @@
     <link rel="icon" href="img/LogoMuniPequeño.ico">
     <title>Noticias/Avisos</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script>
         $(function(){
             $("#header").load("general/header.html");
@@ -24,37 +25,56 @@
             <!-- NOTICIAS -->
             <div class="display_noticias">
                 <h3>Noticias</h3>
-                    <div class="noticias">
-                        <div id="perfil_usuario">
-                            <img src="img/ImagenMiPerfilVacio.png" class="img_usuario" id="img_usuario" alt="">
-                            <a href="#" id="nombre_usuario"><h4>Acueductos y Alcantarillados</h4></a>
-                            <a href="#" id="fecha_hora_publicacion">12:30 a.m<br>23/02/2025</a>
-                        </div>
-                        <p class="text_noticia">Ejemplo de Noticia: La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañerias,
-                            La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria
-                            La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeriaLa Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeriaLa Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria Areas afectadas : .....</p>
-                        <div class="cont_img-noticia">
-                            <img src="/img/ejemplo_noticia.jpg" class="imgs_noticias" name="Hombres trabajando en el mantenimiento de cañerias de agua potable" alt="Trabajo de mantenimiento de cañerias">
-                        </div>
+
+                <div class="noticias">
+                    <div id="perfil_usuario">
+                        <img src="img/ImagenMiPerfilVacio.png" class="img_usuario" id="img_usuario" alt="">
+                        <a href="#" id="nombre_usuario"><h4>Acueductos y Alcantarillados</h4></a>
+                        <a href="#" class="grupo_fecha" id="fecha_publicacion">23/02/2025</a>
+                        <a href="#" class="grupo_fecha" id="hora_publicacion">12:30 a.m</a>
                     </div>
-                    <div class="noticias">
-                        <div id="perfil_usuario">
-                            <img src="img/ImagenMiPerfilVacio.png" class="img_usuario" id="img_usuario" alt="">
-                            <a href="#" id="nombre_usuario"><h4>Acueductos y Alcantarillados</h4></a>
-                            <a href="#" id="fecha_hora_publicacion">12:30 a.m<br>23/02/2025</a>
-                        </div>
-                        <p class="text_noticia">Ejemplo de Noticia: La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañerias,
-                            La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria
-                            La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeriaLa Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeriaLa Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria Areas afectadas : .....</p>
-                        <div class="cont_img-noticia">
-                            <img src="/img/ejemplo_noticia.jpg" class="imgs_noticias" name="Hombres trabajando en el mantenimiento de cañerias de agua potable" alt="Trabajo de mantenimiento de cañerias">
-                        </div>
+                    <p class="text_noticia">Ejemplo de Noticia: La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañerias,
+                        La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria
+                        La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeriaLa Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeriaLa Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria Areas afectadas : .....</p>
+                    <div class="cont_img-noticia">
+                        <img src="/img/ejemplo_noticia.jpg" class="imgs_noticias" name="Hombres trabajando en el mantenimiento de cañerias de agua potable" alt="Trabajo de mantenimiento de cañerias">
                     </div>
+                    <div class="reacciones">
+                        <label for="like" class="like">
+                            <input type="checkbox" id="like">
+                            <i class='bx bxs-like'></i>
+                        </label>
+                        <label for="dis_like">
+                            <input type="checkbox" id="dis_like">
+                            <i class='bx bxs-dislike' ></i>
+                        </label>
+                    </div>
+                </div>
             </div>
 
             <!-- AVISOS -->
             <div class="display_avisos">
                 <h3>Avisos</h3>
+
+                <div class="avisos">
+                    <div class="cont_avisos">
+                        <p class="date">21/03/2025</p>
+                        <p class="hora">11:30 a.m</p>
+                    </div>
+                    <h4 class="titulo-aviso">Recordarles:</h4>
+                    
+                    <p class="text_aviso">El dia de mañana se estaran haciendo cortes de electricidad por mantenimiento de las lineas electricas</p>
+                </div>
+
+                <div class="avisos">
+                    <div class="cont_avisos">
+                        <p class="date">21/03/2025</p>
+                        <p class="hora">11:30 a.m</p>
+                    </div>
+                    <h4 class="titulo-aviso">Recordarles:</h4>
+                    
+                    <p class="text_aviso">El dia de mañana se estaran haciendo cortes de electricidad por mantenimiento de las lineas electricas</p>
+                </div>
 
             </div>
         </div>
