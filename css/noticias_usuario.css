@@ -23,6 +23,19 @@ h3{
     margin-left: 25px;
 }
 
+#button_noticias_avisos{
+    display: flex;
+    position: relative;
+    left: 460px;
+    border: none;
+    background-color: aquamarine;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 0.8s;
+    display: none;
+}
+
 input{
     display: none;
 }
@@ -137,6 +150,14 @@ input:checked  .bx{
         height: auto;
     }
 
+    #button_noticias_avisos{
+        display: block;
+    }
+
+    .display_avisos{
+        display: none;
+    }
+
     .cont_img-noticia{
         /* background-color: antiquewhite; */
         width: auto;
@@ -145,4 +166,14 @@ input:checked  .bx{
         padding: 0;
         padding-bottom: 10px;
     }
+}
+
+/* ----CCS llamado por JS */
+
+.display_avisos-activo{
+    display: block;
+}
+
+.display_noticias-none-activo{
+    display: none;
 }
