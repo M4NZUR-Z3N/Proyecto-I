@@ -23,12 +23,15 @@ h3{
     margin-left: 25px;
 }
 
+.cont_botton_aviso{
+    display: none;
+    justify-content: end;
+}
+
 #button_noticias_avisos{
     display: flex;
-    position: relative;
-    left: 460px;
     border: none;
-    background-color: aquamarine;
+    background-color: rgb(183, 183, 183);
     padding: 10px;
     font-size: 20px;
     border-radius: 10px;
@@ -78,6 +81,7 @@ input{
     height: 400px;
     padding: 10px;
 }
+
 .bx{
     font-size: 30px;
     margin-left: 10px;
@@ -86,6 +90,7 @@ input{
     cursor: pointer;
     border-radius: 100%;
 }
+
 .text_noticia{
     padding: 10px;
     background-color: rgb(255, 255, 255);
@@ -134,8 +139,14 @@ input{
 .bx:hover{
     color: rgb(50, 129, 225);
 }
+
 input:checked  .bx{
     color: rgb(50, 129, 225);
+}
+
+#button_noticias_avisos:hover{
+    background-color: rgb(42, 81, 255);
+    color: white;
 }
 /* HOVER FIN */
 
@@ -152,6 +163,10 @@ input:checked  .bx{
 
     #button_noticias_avisos{
         display: block;
+    }
+
+    .cont_botton_aviso{
+        display: flex;
     }
 
     .display_avisos{
