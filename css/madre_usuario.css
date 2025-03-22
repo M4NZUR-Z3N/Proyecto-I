@@ -3,34 +3,31 @@
     width: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
 }
 
 .mitad_pagina1{
-    display: grid;
-    grid-template-rows: auto 1fr;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo_avisos {
+    width: auto;
     margin-bottom: 5px;
-    margin-left: 15px;
+    margin-top: 15px;
 }
 
 .avisos{
-    width: 90%;
-    margin-left: 5px;
-    grid-row: 1;
+    width: auto;
 }
 
 .aviso {
-    margin-left: 10px;
-    width: 90%;
-    background-color: #cce6ff;
-    max-width: 90%;
+    width: auto;
+    background-color: #cce6ff;;
     overflow-wrap: break-word;
     word-wrap: break-word;
     overflow: hidden;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -43,27 +40,31 @@
 .datos_montes_de_oca {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex;
     height: 100%;
-    margin-left: 5px;
+    width: auto;
     border-radius: 5px;
-    padding: 10px;
 }
 
 .datos {
+    width: auto;
     padding: 10px;
     background-color: #cce6ff;
     border-radius: 5px;
-    margin: 5px;
     margin-top: 10px;
 }
 
 .quienes_somos {
-    margin-top: auto;
+    margin-top: 20px;
+    width: auto;
 }
 
 .quienes_somos h2{
     margin-bottom: 10px;
+}
+
+.funciones{
+    margin-top: 20px;
 }
 
 .funciones p{
@@ -72,6 +73,7 @@
 }
 
 .mitadPagina2 {
+    width: 95%;
     display: flex;
     justify-content: center;
     flex-direction: column;

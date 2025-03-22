@@ -42,13 +42,17 @@ header div{
 }
 
 .menuToggle{
-    background-color: #b4dbff;
     display: none;
+    border: none;
     height: 50px;
     width: 50px;
     font-size: 30px;
     text-align: center;
     border-radius: 10px;
+}
+
+.menuToggle:hover{
+    background-color: #cce6ff;
 }
 
 .menu{
@@ -109,6 +113,30 @@ footer{
     height: 150px;
     width: auto;
 }
+
+.contactos__info{
+    height: 140px;
+    width: 240px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    box-shadow: 0 0 5px;
+    border-radius: 5px;
+}
+
+.contactos__info h2{
+    position: relative;
+    left: 25%;
+}
+
+.contactos__info p{
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 @media(max-width: 1000px){
     .menuToggle{
