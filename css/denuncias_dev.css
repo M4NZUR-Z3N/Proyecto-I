@@ -100,3 +100,68 @@ select {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+@media (max-width: 1024px) {
+    .tabla-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    th, td {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-container input, 
+    .filter-container select, 
+    .filter-container button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .tabla-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .pagination {
+        flex-direction: column;
+    }
+
+    .pagination button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        font-size: 11px;
+        padding: 5px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-container input, 
+    .filter-container select, 
+    .filter-container button {
+        width: 100%;
+    }
+
+    .pagination {
+        flex-direction: column;
+    }
+}
