@@ -19,7 +19,39 @@
 
     <div id="header"></div>
 
+    <section class="add_denun">
+    
+        <div class="form_user">
+            <h2 class="title_2">Ingrese su Denuncia</h2>
+    
+            <form action="">
+    
+                <div class="date_den">
+                    <label for="date">Fecha:</label>
+                    <input type="date" name="date" id="date">
+                </div>
+    
+                <div class="file_con">
+                    <label for="file">Adjuntar Archivo:</label>
+                    <input type="file" name="file" id="file">
+                </div>
+    
+                <div class="desc_den">
+                    <label for="desc">Descripción:</label>
+                    <textarea name="desc" id="desc" cols="30" rows="5"></textarea>
+                </div>
+    
+                <div class="button_container">
+                    <button class="button_den" type="submit">Enviar</button>
+                </div>
+    
+            </form>
+        </div>
+    </section>
+
     <section class="sec_denun">
+
+        <h2 class="title_h2">Denuncias Registradas</h2>
         
         <div class="denun">
             <p class="date">Fecha: 03/10/2024</p>
@@ -74,13 +106,7 @@
         </div>
 
     </section>
-
-    <section class="add_denun">
-        <div class="gen_den">
-            <a href="#">Generar denuncia</a>
-        </div>  
-    </section>
-
+    
     <div id="footer"></div>
 
 </body>

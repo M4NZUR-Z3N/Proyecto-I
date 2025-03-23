@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denuncias Usuarios</title>
+    <link rel="stylesheet" href="./css/denuncias_dev.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("general/header.html");
+            $("#footer").load("general/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <section class="tabla-container">
+        <div class="filter-container">
+            <input type="date" id="filterDate">
+            <select id="filterStatus">
+                <option value="">Todos</option>
+                <option value="Nuevo">Nuevo</option>
+                <option value="Proceso">En proceso</option>
+                <option value="Anulado">Anulado</option>
+                <option value="Solucionado">Solucionado</option>
+            </select>
+            <button id="filterButton">Filtrar</button>
+            <button id="resetButton">Resetear</button>
+        </div>
+    
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Usuario</th>
+                    <th>Descripción</th>
+                    <th>Archivo</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            
+            <tbody id="denunciasTabla">
+                
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-19</td>
+                    <td>María López</td>
+                    <td>Vecino sin permiso de construcción</td>
+                    <td><a href="#">Ver Archivo</a></td>
+
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo">Nuevo</option>
+                            <option value="Proceso" selected>En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2025-10-19</td>
+                    <td>Carlos Ramírez</td>
+                    <td>Ruido excesivo en la madrugada</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo">Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado" selected>Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2024-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>2023-10-03</td>
+                    <td>Juan Pérez</td>
+                    <td>Problemas con la basura de la zona</td>
+                    <td><a href="#">Ver Archivo</a></td>
+                    <td>
+                        <select class="estado">
+                            <option value="Nuevo" selected>Nuevo</option>
+                            <option value="Proceso">En proceso</option>
+                            <option value="Anulado">Anulado</option>
+                            <option value="Solucionado">Solucionado</option>
+                        </select>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    
+        <div class="pagination">
+            <button id="prevPage">Anterior</button>
+            <span id="pageInfo">Página 1</span>
+            <button id="nextPage">Siguiente</button>
+        </div>
+
+    </section>
+
+    <script src="js/denuncias_dev.js"></script>
+    
+    <div id="footer"></div>
+
+</body>
+
+</html>
