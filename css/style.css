@@ -39,7 +39,11 @@ header div{
     height: 80%;
 }
 
-.menuToggle{
+#check{
+    display: none;
+}
+
+.checkbtn{
     display: none;
     border: none;
     height: 50px;
@@ -47,9 +51,10 @@ header div{
     font-size: 30px;
     text-align: center;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.menuToggle:hover{
+.checkbtn:hover{
     background-color: #cce6ff;
 }
 
@@ -152,12 +157,31 @@ footer{
 }
 
 @media(max-width: 1000px){
-    .menuToggle{
+    .checkbtn{
         display: block;
     }
 
     .menu{
-        display: none;
+        z-index: 2;
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        background-color: rgb(94, 94, 94);
+        display: block;
+        flex-direction: column;
+        text-align: center;
+        transition: 0.5s;
+        left: 120%;
+    }
+
+    .menuBtn{
+        width: 100%;
+        background-color: white;
+        border-radius: 0;
+    }
+
+    #check:checked ~ .menu{
+        left: 0;
     }
 
     .logoFooter{
