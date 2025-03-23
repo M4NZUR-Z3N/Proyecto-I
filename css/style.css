@@ -11,11 +11,9 @@
 body{
     font-family: sans-serif, "Arvo", Arial, Helvetica;
     background-color: #f7f7f7;
-    background-size: 30%;
-    height: 100vh;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    display: block;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -80,8 +78,8 @@ header div{
 }
 
 main{
-    padding: 60px;
-    min-height: 70vh;
+    padding: 40px;
+    min-height: auto;
     box-shadow: 
     inset 0px 10px 10px -5px #c7c7c7,
     inset 0px -10px 10px -5px #c7c7c7;
@@ -117,6 +115,7 @@ footer{
 .contactos__info{
     height: 140px;
     width: 240px;
+    min-width: 240px;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -126,7 +125,8 @@ footer{
     border-radius: 5px;
 }
 
-.contactos__info h2{
+.contactos__info h6{
+    font-size: 25px;
     position: relative;
     left: 25%;
 }
@@ -136,7 +136,20 @@ footer{
     flex-direction: column;
 }
 
-
+/* Clase modo dev de algunas paginas*/
+.modo__dev{
+    background-color: black;
+    color: white;
+    height: auto;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+}
 
 @media(max-width: 1000px){
     .menuToggle{
