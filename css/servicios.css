@@ -1,7 +1,14 @@
+main{
+    display: flex;
+    justify-content: center;
+}
+
 .pagina{
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 20px;
+    width: 100%;
+    min-width: 400px;
 }
 
 .servicios{
@@ -82,4 +89,21 @@ li{
 
 .servicios_dados p {
     margin-bottom: 5px
+}
+
+@media(max-width: 1800px){
+    .pagina{
+        grid-template-columns: auto auto;
+        width: 80%;
+    }
+
+}
+
+@media(max-width: 1550px){
+    
+    .pagina{
+        grid-template-columns: auto;
+        width: 45%;
+    }
+
 }

@@ -39,7 +39,7 @@ header div{
     height: 80%;
 }
 
-#check{
+#checkMenu{
     display: none;
 }
 
@@ -162,24 +162,27 @@ footer{
     }
 
     .menu{
-        z-index: 2;
+        z-index: 3;
         position: absolute;
-        top: 90px;
+        top: 95px;
         width: 100%;
-        display: block;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
         flex-direction: column;
         text-align: center;
         transition: 0.5s;
         left: -120%;
+        border: 5px solid #dfdfdf;
     }
 
     .menuBtn{
         width: 100%;
-        background-color: #d0d0d0;
+        background-color: white;
         border-radius: 0;
     }
 
-    #check:checked ~ .menu{
+    #checkMenu:checked ~ .menu{
         left: 0;
     }
 

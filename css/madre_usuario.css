@@ -5,7 +5,7 @@
     grid-template-columns: 1fr 1fr;
 }
 
-.mitad_pagina1{
+.mitad_pagina{
     width: 95%;
     display: flex;
     flex-direction: column;
@@ -17,24 +17,34 @@
     margin-top: 15px;
 }
 
+.section_avisos{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    height: 200px;
+    overflow-y: scroll;
+
+}
+
 .avisos{
     width: auto;
 }
 
 .aviso {
     width: auto;
-    background-color: #cce6ff;;
+    background-color: #f0efee;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
     overflow-wrap: break-word;
     word-wrap: break-word;
-    overflow: hidden;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.titulo_avisos{
-    margin-bottom: 10px;
-    margin-left: 15px;
+.titulo_principal{
+    font-size: 40px;
+    margin: 0 0 10px 15px;
 }
 
 .datos_montes_de_oca {
@@ -48,8 +58,9 @@
 
 .datos {
     width: auto;
-    padding: 10px;
-    background-color: #cce6ff;
+    padding: 20px;
+    background-color: #f0efee;
+    box-shadow: 0px 0px 10px #000000;
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -72,24 +83,61 @@
     margin: 5px;
 }
 
-.mitadPagina2 {
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
 .noticias {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+}
+
+.section_noticias{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    height: 840px;
+    overflow-y: auto;
 }
 
 .noticia {
-    margin: 10px;
-    width: 90%;
-    background-color: #cce6ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    background-color: #f0efee;
+    box-shadow: 0px 0px 20px -5px rgb(0, 0, 0);
     border-radius: 5px;
-    padding: 10px; 
+    gap: 20px;
+    padding: 20px;
+}
+
+.Titulofuente_noticia{
+    width: 95%;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo_noticia{
+    width: 60%;
+    display: block;
+    font-size: 20px;
+}
+
+.fuente_noticia{
+    font-size: 15px;
+    
+}
+
+.imagen_noticia{
+    width: 100%;
+    height: auto;
+}
+
+@media(max-width: 1200px){
+    .estructura{
+        display: flex;
+        flex-direction: column;
+    }
 }
