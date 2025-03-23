@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         setTimeout(() => {
             messageBox.remove();
-        }, 6000);
+            window.location.href = "reset_password.html";
+        }, 5000);
     });
 });
