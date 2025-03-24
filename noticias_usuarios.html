@@ -20,42 +20,53 @@
     <div id="header"></div>
     <main>
         
-        <div class="cont_general">
+       
             <div class="cont_botton_aviso">
                 <button id="button_noticias_avisos">Avisos</button>
-            </div>
+            </div> 
+            <div class="cont_general">
             <!-- NOTICIAS -->
-            <div class="display_noticias">
+            <div id="display_noticias">
                 <h3>Noticias</h3>
 
                 <div class="noticias">
+
                     <div id="perfil_usuario">
                         <img src="img/ImagenMiPerfilVacio.png" class="img_usuario" id="img_usuario" alt="">
                         <a href="#" id="nombre_usuario"><h4>Acueductos y Alcantarillados</h4></a>
                         <a href="#" class="grupo_fecha" id="fecha_publicacion">23/02/2025</a>
                         <a href="#" class="grupo_fecha" id="hora_publicacion">12:30 a.m</a>
                     </div>
-                    <p class="text_noticia">Ejemplo de Noticia: La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañerias,
-                        La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria
-                        .....</p>
+
+                    <div class="text_noticia">
+                        <h4 class="titulo_noticia">Titulo</h4>
+                        <p>Ejemplo de Noticia: La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañerias,
+                            La Municipalidad de Montes de Oca les informa, Sabado 23 de Junio se estaran realizando cortes en el servicio de agua por mantenimiento del Sistema de cañeria
+                            .....
+                        </p>
+                    </div>
+
                     <div class="cont_img-noticia">
                         <img src="/img/ejemplo_noticia.jpg" class="imgs_noticias" name="Hombres trabajando en el mantenimiento de cañerias de agua potable" alt="Trabajo de mantenimiento de cañerias">
                     </div>
+
                     <div class="reacciones">
                         <label for="like" class="like">
                             <input type="checkbox" id="like">
-                            <i class='bx bxs-like'></i>
+                            <i class='bx bxs-like'></i>2
                         </label>
                         <label for="dis_like">
                             <input type="checkbox" id="dis_like">
-                            <i class='bx bxs-dislike' ></i>
+                            <i class='bx bxs-dislike' ></i>1
                         </label>
                     </div>
+
                 </div>
+
             </div>
 
             <!-- AVISOS -->
-            <div class="display_avisos">
+            <div id="display_avisos">
                 <h3>Avisos</h3>
 
                 <div class="avisos">
@@ -82,5 +93,6 @@
         </div>
     </main>
     <div id="footer"></div>
+    <script src="/js/noticias_usuario.js"></script>
 </body>
 </html>

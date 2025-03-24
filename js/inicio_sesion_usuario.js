@@ -3,7 +3,7 @@
 
     // Ingresamos al HTML con el DOM
     const $formulario = document.getElementById('formulario_inicio_sesion');
-    const $inputs = document.querySelectorAll('#formulario_inicio_sesion input')
+    const $inputs = document.querySelectorAll('#formulario_inicio_sesion input');
 
     // const $inputs = document.querySelectorAll('#formulario input');
     // const $formulario = document.getElementById('formulario');

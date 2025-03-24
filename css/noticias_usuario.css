@@ -24,13 +24,14 @@ h3{
 }
 
 .cont_botton_aviso{
-    display: none;
+    display: block;
     justify-content: end;
 }
 
 #button_noticias_avisos{
     display: flex;
     border: none;
+    width: 120px;
     background-color: rgb(183, 183, 183);
     padding: 10px;
     font-size: 20px;
@@ -45,7 +46,7 @@ input{
 /* GENERALES FIN */
 
 /* DISPLAY DE NOTICIAS */
-.display_noticias{
+#display_noticias{
     display: flex;
     position: relative;
     flex-direction: column;
@@ -73,7 +74,7 @@ input{
 }
 
 .cont_img-noticia{
-/* background-color: chartreuse; */
+background-color: chartreuse;
     margin-top: 10px;
     display: flex;
     align-content: center;
@@ -151,13 +152,14 @@ input:checked  .bx{
 /* HOVER FIN */
 
 /* RESPONSIVE */
+
 @media(max-width:900px){
     .cont_general{
         display:block ;
     }
 
     .imgs_noticias{
-        width: 400px;
+        width: auto;
         height: auto;
     }
 
@@ -169,7 +171,7 @@ input:checked  .bx{
         display: flex;
     }
 
-    .display_avisos{
+    #display_avisos{
         display: none;
     }
 
