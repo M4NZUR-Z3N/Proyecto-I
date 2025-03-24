@@ -5,6 +5,10 @@
     const $formulario = document.getElementById('formulario_inicio_sesion');
     const $inputs = document.querySelectorAll('#formulario_inicio_sesion input');
 
+    // para registros
+    const $formulario_registro = document.getElementById('formulario_inicio_sesion');
+    const $inputs_registro = document.querySelectorAll('#formulario_inicio_sesion input');
+
     // const $inputs = document.querySelectorAll('#formulario input');
     // const $formulario = document.getElementById('formulario');
 
@@ -36,3 +40,42 @@
         input.addEventListener("keyup",validarFormulario);
         input.addEventListener("blur",validarFormulario);
     })
+
+// -----------------------------------------------------------------------Display en el Responsive-----------------------------------------------------------------------
+    // Noticias avisos usuario.
+    // ingresamos al DOM 
+    const columna_inicio_sesion = document.getElementById('formulario_inicio_sesion');
+    const columna_registro_usuario = document.getElementById('formulario_registro_usuario');
+    const toggleButton = document.getElementById('btn_registro');
+
+    const checkScreenSize = () => {
+        if(window.innerWidth >= 900) {//si la pantalla es grande, se tienen que mostrar ambas columnas, sin el boton
+            columna_inicio_sesion.style.display = 'block';
+            columna_registro_usuario.style.display = 'block';
+            toggleButton.style.display = 'none';
+
+        }else{//si la pantalla es pequeña, solo se muestra 1 columna y el boton
+            columna_inicio_sesion.style.display = 'block';
+            columna_registro_usuario.style.display = 'none';
+            toggleButton.style.display = 'block';
+        }
+    }
+
+    //llamamos la funcion al cargar pagina
+    checkScreenSize();
+
+    // escuchamos el evento
+    toggleButton.addEventListener('click',() => {
+        if(toggleButton.textContent === "Registrarse"){
+            toggleButton.textContent ="Iniciar Sesion";
+            columna_registro_usuario.style.display = 'block';
+            columna_inicio_sesion.style.display = 'none';
+        }else{
+            toggleButton.textContent = "Registrarse";
+            columna_registro_usuario.style.display = 'none';
+            columna_inicio_sesion.style.display = 'block';
+        }
+    });
+
+    //llamamos la funcion que escucha las dimenciones de la ventana
+        window.addEventListener('resize',checkScreenSize);

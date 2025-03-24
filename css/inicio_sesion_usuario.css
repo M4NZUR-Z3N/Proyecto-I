@@ -5,7 +5,6 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 30px;
     justify-content: center;
-    height: auto;
 }
 
 h2{
@@ -30,6 +29,7 @@ a{
     box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
     background-color: rgba(217, 217, 217, 0.85);
     border-radius: 15px;
+    transition: 1s;
 }
 
 
@@ -38,6 +38,7 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: 1s;
 }
 
 .contenedor_buttons{
@@ -117,11 +118,12 @@ a{
     display: none;
 }
 
-.btn_registro{
+#btn_registro{
     display: none;
     font-size: 18px;
     margin-top: 20px;
     padding: 10px;
+    border-style: none;
     border-radius: 12px;
     background-color: rgb(183, 183, 183);
     cursor: pointer;
@@ -147,7 +149,7 @@ a{
     color: white;
 }
 
-.btn_registro:hover{
+#btn_registro:hover{
     background-color: rgb(42, 81, 255);
     color: white;
 }
@@ -208,14 +210,13 @@ input:focus{
 
     .inicio{
         width: 95%;
-        height: 60vh;
+        height: auto;
     }
 
     .registro{
         display: none;
-        margin-top: 20px;
         width: 95%;
-        height: 60vh;
+        height: auto;
     }
 
     .btn_registro{
