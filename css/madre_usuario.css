@@ -3,67 +3,79 @@
     width: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
 }
 
-.mitad_pagina1{
-    display: grid;
-    grid-template-rows: auto 1fr;
+.mitad_pagina{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
 }
 
 .titulo_avisos {
+    width: auto;
     margin-bottom: 5px;
-    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.section_avisos{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    height: 200px;
+    overflow-y: scroll;
+
 }
 
 .avisos{
-    width: 90%;
-    margin-left: 5px;
-    grid-row: 1;
+    width: auto;
 }
 
 .aviso {
-    margin-left: 10px;
-    width: 90%;
-    background-color: #cce6ff;
-    max-width: 90%;
+    width: auto;
+    background-color: #f0efee;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
     overflow-wrap: break-word;
     word-wrap: break-word;
-    overflow: hidden;
-    padding: 8px;
+    padding: 20px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.titulo_avisos{
-    margin-bottom: 10px;
-    margin-left: 15px;
+.titulo_principal{
+    font-size: 40px;
+    margin: 0 0 10px 15px;
 }
 
 .datos_montes_de_oca {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex;
     height: 100%;
-    margin-left: 5px;
+    width: auto;
     border-radius: 5px;
-    padding: 10px;
 }
 
 .datos {
-    padding: 10px;
-    background-color: #cce6ff;
+    width: auto;
+    padding: 20px;
+    background-color: #f0efee;
+    box-shadow: 0px 0px 10px #000000;
     border-radius: 5px;
-    margin: 5px;
     margin-top: 10px;
 }
 
 .quienes_somos {
-    margin-top: auto;
+    margin-top: 20px;
+    width: auto;
 }
 
 .quienes_somos h2{
     margin-bottom: 10px;
+}
+
+.funciones{
+    margin-top: 20px;
 }
 
 .funciones p{
@@ -71,23 +83,61 @@
     margin: 5px;
 }
 
-.mitadPagina2 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
 .noticias {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+}
+
+.section_noticias{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    height: 840px;
+    overflow-y: auto;
 }
 
 .noticia {
-    margin: 10px;
-    width: 90%;
-    background-color: #cce6ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    background-color: #f0efee;
+    box-shadow: 0px 0px 20px -5px rgb(0, 0, 0);
     border-radius: 5px;
-    padding: 10px; 
+    gap: 20px;
+    padding: 20px;
+}
+
+.Titulofuente_noticia{
+    width: 95%;
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo_noticia{
+    width: 60%;
+    display: block;
+    font-size: 20px;
+}
+
+.fuente_noticia{
+    font-size: 15px;
+    
+}
+
+.imagen_noticia{
+    width: 100%;
+    height: auto;
+}
+
+@media(max-width: 1200px){
+    .estructura{
+        display: flex;
+        flex-direction: column;
+    }
 }

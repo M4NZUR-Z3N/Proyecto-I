@@ -11,11 +11,9 @@
 body{
     font-family: sans-serif, "Arvo", Arial, Helvetica;
     background-color: #f7f7f7;
-    background-size: 30%;
-    height: 100vh;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    display: block;
+    height: auto;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -41,14 +39,23 @@ header div{
     height: 80%;
 }
 
-.menuToggle{
-    background-color: #b4dbff;
+#checkMenu{
     display: none;
+}
+
+.checkbtn{
+    display: none;
+    border: none;
     height: 50px;
     width: 50px;
     font-size: 30px;
     text-align: center;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.checkbtn:hover{
+    background-color: #cce6ff;
 }
 
 .menu{
@@ -76,8 +83,8 @@ header div{
 }
 
 main{
-    padding: 60px;
-    min-height: 70vh;
+    padding: 40px;
+    min-height: auto;
     box-shadow: 
     inset 0px 10px 10px -5px #c7c7c7,
     inset 0px -10px 10px -5px #c7c7c7;
@@ -110,13 +117,73 @@ footer{
     width: auto;
 }
 
+.contactos__info{
+    height: 140px;
+    width: 240px;
+    min-width: 240px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    box-shadow: 0 0 5px;
+    border-radius: 5px;
+}
+
+.contactos__info h6{
+    font-size: 25px;
+    position: relative;
+    left: 25%;
+}
+
+.contactos__info p{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Clase modo dev de algunas paginas*/
+.modo__dev{
+    background-color: black;
+    color: white;
+    height: auto;
+    text-align: center;
+    width: 200px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+}
+
 @media(max-width: 1000px){
-    .menuToggle{
+    .checkbtn{
         display: block;
     }
 
     .menu{
-        display: none;
+        z-index: 3;
+        position: absolute;
+        top: 95px;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        flex-direction: column;
+        text-align: center;
+        transition: 0.5s;
+        left: -120%;
+        border: 5px solid #dfdfdf;
+    }
+
+    .menuBtn{
+        width: 100%;
+        background-color: white;
+        border-radius: 0;
+    }
+
+    #checkMenu:checked ~ .menu{
+        left: 0;
     }
 
     .logoFooter{
