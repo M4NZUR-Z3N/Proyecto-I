@@ -9,29 +9,33 @@
             <a class="menuBtn" href="../denuncias_usuarios.html">Denuncias</a>
             <a class="menuBtn" href="../social_perfiles.html">Social</a>
             <a class="menuBtn" href="../servicios.html">Servicios</a>
-            <a class="menuBtn" id="iniciarSesion_Btn iniciarSesion_visualizar" href="../inicio_sesion_usuario.html">Iniciar Sesion</a>
-            <a class="menuBtn" id="perfil_Btn perfil_visualizar" href="../perfil_usuario.html">Mi Perfil</a> <!--Boton Temporal (Inicio Sesion y Mi Perfil serán intercambiables)-->
+            <a class="menuBtn no-visualizar" id="iniciarSesion_Btn" href="../inicio_sesion_usuario.html">Iniciar Sesion</a>
+            <a class="menuBtn visualizar" id="perfil_Btn" href="../perfil_usuario.html">Mi Perfil</a> <!--Boton Temporal (Inicio Sesion y Mi Perfil serán intercambiables)-->
         </nav>
     </div>
     <!-- Boton para cambiar inicio sesion / Perfil temporalmente  -->
-    <div class="boton_Inicio-Perfil">
-        <input type="checkbox" id="check_Inicio-Perfil">
-        <label class="toggleButton" for="check_Inicio-Perfil">Cambiar Inicio Sesion</label>
-    </div>
+    <input type="checkbox" id="check_Inicio-Perfil">
+    <label class="boton_Inicio-Perfil" for="check_Inicio-Perfil">Cambiar Mi Perfil</label>
 </header>
 <script>
 const toggleButtonCheckBox = document.querySelector("#check_Inicio-Perfil");
-const toggleButton = document.querySelector(".toggleButton");
-const botonIniciarSesion = document.getElementById("iniciarSesion_Btn");
-const botonPerfil = document.
+const toggleButton = document.querySelector(".boton_Inicio-Perfil");
+const botonIniciarSesion = document.querySelector("#iniciarSesion_Btn");
+const botonPerfil = document.querySelector("#perfil_Btn");
 
 function updateToggleButtonText() {
     if (toggleButtonCheckBox.checked) {
-        toggleButton.textContent = "Cambiar Mi Perfil";
-
+        toggleButton.textContent = "Cambiar Iniciar Sesion";
+        botonPerfil.classList.add("visualizar");
+        botonIniciarSesion.classList.add("no-visualizar");
+        botonPerfil.classList.remove("no-visualizar");
+        botonIniciarSesion.classList.remove("visualizar");
     } else {
-        toggleButton.textContent = "Cambiar Inicio Sesion";
-
+        toggleButton.textContent = "Cambiar Mi Perfil";
+        botonPerfil.classList.add("no-visualizar");
+        botonIniciarSesion.classList.add("visualizar");
+        botonPerfil.classList.remove("visualizar");
+        botonIniciarSesion.classList.remove("no-visualizar");
     }
 }
 

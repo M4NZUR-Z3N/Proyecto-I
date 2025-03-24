@@ -113,6 +113,10 @@ textarea.perfil__dato {
     background-color: #d9534f;
 }
 
+#input-descripcion{
+    height: 80%;
+}
+
 /* JS */
 
 .perfil__dato--visualizar-activo{

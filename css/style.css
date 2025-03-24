@@ -145,10 +145,11 @@ footer{
 .modo__dev{
     background-color: black;
     color: white;
-    height: auto;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
     width: 200px;
-    padding: 5px;
     border-radius: 5px;
     margin: 5px;
     position: fixed;
@@ -167,30 +168,25 @@ footer{
     background-color: black;
     color: white;
     width: 200px;
-    height: 60px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     position: fixed;
-    right: 15px;
-    bottom: 15px;
+    margin: 5px;
+    right: 0px;
+    bottom: 0px;
     z-index: 3;
+    cursor: pointer;
+    user-select: none;
 }
 
-.iniciarSesion_visualizar{
-    display: block;
+.visualizar{
+    display: flex;
 }
 
-.iniciarSesion_no-visualizar{
-    display: none;
-}
-
-.perfil_visualizar{
-    display: block;
-}
-
-.perfil_no-visualizar{
+.no-visualizar{
     display: none;
 }
 
