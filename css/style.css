@@ -145,15 +145,49 @@ footer{
 .modo__dev{
     background-color: black;
     color: white;
-    height: auto;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
     width: 200px;
-    padding: 5px;
     border-radius: 5px;
     margin: 5px;
     position: fixed;
     left: 0%;
     bottom: 0%;
+}
+
+/* Boton para cambiar inicio sesion / Perfil temporalmente */
+
+#check_Inicio-Perfil{
+    display: none;
+}
+
+.boton_Inicio-Perfil{
+    white-space: nowrap;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    margin: 5px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 3;
+    cursor: pointer;
+    user-select: none;
+}
+
+.visualizar{
+    display: flex;
+}
+
+.no-visualizar{
+    display: none;
 }
 
 @media(max-width: 1000px){

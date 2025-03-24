@@ -9,8 +9,44 @@
             <a class="menuBtn" href="../denuncias_usuarios.html">Denuncias</a>
             <a class="menuBtn" href="../social_perfiles.html">Social</a>
             <a class="menuBtn" href="../servicios.html">Servicios</a>
-            <a class="menuBtn" href="../inicio_sesion_usuario.html">Iniciar Sesion</a>
-            <a class="menuBtn" href="../perfil_usuario.html">Mi Perfil</a> <!--Boton Temporal (Inicio Sesion y Mi Perfil serán intercambiables)-->
+            <a class="menuBtn no-visualizar" id="iniciarSesion_Btn" href="../inicio_sesion_usuario.html">Iniciar Sesion</a>
+            <a class="menuBtn visualizar" id="perfil_Btn" href="../perfil_usuario.html">Mi Perfil</a> <!--Boton Temporal (Inicio Sesion y Mi Perfil serán intercambiables)-->
         </nav>
     </div>
+    <!-- Boton para cambiar inicio sesion / Perfil temporalmente  -->
+    <input type="checkbox" id="check_Inicio-Perfil">
+    <label class="boton_Inicio-Perfil" for="check_Inicio-Perfil">Cambiar Mi Perfil</label>
 </header>
+<script>
+let toggleButtonCheckBox;
+let toggleButton;
+let botonIniciarSesion;
+let botonPerfil;
+
+toggleButtonCheckBox = document.querySelector("#check_Inicio-Perfil");
+toggleButton = document.querySelector(".boton_Inicio-Perfil");
+botonIniciarSesion = document.querySelector("#iniciarSesion_Btn");
+botonPerfil = document.querySelector("#perfil_Btn");
+
+function updateToggleButtonText() {
+    if (toggleButtonCheckBox.checked) {
+        toggleButton.textContent = "Cambiar Iniciar Sesion";
+        botonPerfil.classList.add("visualizar");
+        botonIniciarSesion.classList.add("no-visualizar");
+        botonPerfil.classList.remove("no-visualizar");
+        botonIniciarSesion.classList.remove("visualizar");
+    } else {
+        toggleButton.textContent = "Cambiar Mi Perfil";
+        botonPerfil.classList.add("no-visualizar");
+        botonIniciarSesion.classList.add("visualizar");
+        botonPerfil.classList.remove("visualizar");
+        botonIniciarSesion.classList.remove("no-visualizar");
+    }
+}
+
+// Llamar a la función al cargar la página para establecer el texto inicial
+updateToggleButtonText();
+
+// Agregar un evento para escuchar cambios en el checkbox
+toggleButtonCheckBox.addEventListener('change', updateToggleButtonText);
+</script>
