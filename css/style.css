@@ -156,6 +156,44 @@ footer{
     bottom: 0%;
 }
 
+/* Boton para cambiar inicio sesion / Perfil temporalmente */
+
+#check_Inicio-Perfil{
+    display: none;
+}
+
+.boton_Inicio-Perfil{
+    white-space: nowrap;
+    background-color: black;
+    color: white;
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 3;
+}
+
+.iniciarSesion_visualizar{
+    display: block;
+}
+
+.iniciarSesion_no-visualizar{
+    display: none;
+}
+
+.perfil_visualizar{
+    display: block;
+}
+
+.perfil_no-visualizar{
+    display: none;
+}
+
 @media(max-width: 1000px){
     .checkbtn{
         display: block;

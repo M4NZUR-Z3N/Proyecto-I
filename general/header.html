@@ -9,8 +9,35 @@
             <a class="menuBtn" href="../denuncias_usuarios.html">Denuncias</a>
             <a class="menuBtn" href="../social_perfiles.html">Social</a>
             <a class="menuBtn" href="../servicios.html">Servicios</a>
-            <a class="menuBtn" href="../inicio_sesion_usuario.html">Iniciar Sesion</a>
-            <a class="menuBtn" href="../perfil_usuario.html">Mi Perfil</a> <!--Boton Temporal (Inicio Sesion y Mi Perfil serán intercambiables)-->
+            <a class="menuBtn" id="iniciarSesion_Btn iniciarSesion_visualizar" href="../inicio_sesion_usuario.html">Iniciar Sesion</a>
+            <a class="menuBtn" id="perfil_Btn perfil_visualizar" href="../perfil_usuario.html">Mi Perfil</a> <!--Boton Temporal (Inicio Sesion y Mi Perfil serán intercambiables)-->
         </nav>
     </div>
+    <!-- Boton para cambiar inicio sesion / Perfil temporalmente  -->
+    <div class="boton_Inicio-Perfil">
+        <input type="checkbox" id="check_Inicio-Perfil">
+        <label class="toggleButton" for="check_Inicio-Perfil">Cambiar Inicio Sesion</label>
+    </div>
 </header>
+<script>
+const toggleButtonCheckBox = document.querySelector("#check_Inicio-Perfil");
+const toggleButton = document.querySelector(".toggleButton");
+const botonIniciarSesion = document.getElementById("iniciarSesion_Btn");
+const botonPerfil = document.
+
+function updateToggleButtonText() {
+    if (toggleButtonCheckBox.checked) {
+        toggleButton.textContent = "Cambiar Mi Perfil";
+
+    } else {
+        toggleButton.textContent = "Cambiar Inicio Sesion";
+
+    }
+}
+
+// Llamar a la función al cargar la página para establecer el texto inicial
+updateToggleButtonText();
+
+// Agregar un evento para escuchar cambios en el checkbox
+toggleButtonCheckBox.addEventListener('change', updateToggleButtonText);
+</script>
