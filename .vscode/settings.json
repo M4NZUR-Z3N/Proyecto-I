@@ -1,6 +1,0 @@
-{
-    "editor.quickSuggestionsDelay": 10,
-    "editor.parameterHints.enabled": true,
-    "editor.inlayHints.enabled": "offUnlessPressed",
-    "editor.hover.enabled": false
-}
