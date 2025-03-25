@@ -5,10 +5,6 @@
     const $formulario = document.getElementById('formulario_inicio_sesion');
     const $inputs = document.querySelectorAll('#formulario_inicio_sesion input');
 
-    // para registros
-    const $formulario_registro = document.getElementById('formulario_inicio_sesion');
-    const $inputs_registro = document.querySelectorAll('#formulario_inicio_sesion input');
-
     // const $inputs = document.querySelectorAll('#formulario input');
     // const $formulario = document.getElementById('formulario');
 
@@ -18,29 +14,46 @@
     }
 
     const campos={
+        nombre: false,
+        apellidos: false,
+        cedula: false,
+        password: false,
+        telefono: false,
+        direccion: false,
         email: false,
+        email2: false,
     }
     //Paso 3 Realizar la accion
     const validarFormulario = (e) =>{
         switch(e.target.name){
             case "email":
                 validarCampo(expresiones.email, e.target, "email");
+            break;
         }
     }
 
     const validarCampo = (expresion,input,campo) =>{
         if (expresion.test(input.value)) {
             document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo");
+            campos[campo]=true;
         } else {
             document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo");
+            campos[campo]=false;
         }
     }
+    
     //Paso 2 Escuchar el Evento
     $inputs.forEach((input)=>{
         input.addEventListener("keyup",validarFormulario);
         input.addEventListener("blur",validarFormulario);
     })
 
+    $inputs_registro.forEach((input)=>{
+        input.addEventListener("keyup",validarFormulario);
+        input.addEventListener("blur",validarFormulario);
+    })
+
+    
 // -----------------------------------------------------------------------Display en el Responsive-----------------------------------------------------------------------
     // Noticias avisos usuario.
     // ingresamos al DOM 

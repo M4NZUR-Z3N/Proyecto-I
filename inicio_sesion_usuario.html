@@ -70,32 +70,32 @@
                 <div class="formulario_registro">
                     <!-- Nombre Usuario -->
                     <div class="grupo_registro" id="formulario_nombre">
-                        <label for="formulario_nombre" class="formulario_label">Nombre</label>
-                        <input class="inp_registro" type="text" name="nombre" placeholder="Juan Andres">
+                        <label for="" class="formulario_label">Nombre</label>
+                        <input class="inp_registro" type="text" id="nombre" name="nombre" placeholder="Juan Andres">
                         <p class="formulario__input-error">
                             El usuario debe tener mínimo 3 caracteres y solo admite letras y espacios.
                         </p>
                     </div>
                     <!-- Apellidos Usuario -->
                     <div class="grupo_registro" id="formulario_apellidos">
-                        <label for="formulario_apellidos" class="formulario_label">Apellidos</label>
-                        <input class="inp_registro" type="text" name="apellidos" placeholder="Castro Benavides">
+                        <label for="" class="formulario_label">Apellidos</label>
+                        <input class="inp_registro" type="text" id="apellidos" name="apellidos" placeholder="Castro Benavides">
                         <p class="formulario__input-error">
                             El usuario debe tener mínimo 3 caracteres y solo admite letras y espacios.
                         </p>
                     </div>
                     <!-- Cedula Usuario -->
                     <div class="grupo_registro" id="formulario_cedula">
-                        <label for="formulario_cedula" class="formulario_label">Cedula</label>
-                        <input class="inp_registro" type="number" name="cedula" placeholder="1 1234 1234">
+                        <label for="" class="formulario_label">Cedula</label>
+                        <input class="inp_registro" type="text" id="cedula" name="cedula" placeholder="1 1234 1234">
                         <p class="formulario__input-error">
                             La Cedula debe tener mínimo 9 caracteres y solo admite numeros y guiones.
                         </p>
                     </div>
                     <!-- Correo Usuario -->
-                    <div class="grupo_registro" id="formulario_correo">
-                        <label for="formulario_correo" class="formulario_label">Correo</label>
-                        <input class="inp_registro" type="email" name="correo" placeholder="correo@correo.com">
+                    <div class="grupo_registro" id="formulario_email2">
+                        <label for="" class="formulario_label">Correo</label>
+                        <input class="inp_registro" type="email" id="correo2" name="email2" placeholder="correo@correo.com">
                         <p class="formulario__input-error">
                             Debe agregar un correo con la siguiente estructura dato1@dato2.com
                             dato1 acepta letras,guión bajo y números
@@ -104,24 +104,24 @@
                     </div>
                     <!-- Password Usuario -->
                     <div class="grupo_registro" id="formulario_password">
-                        <label for="formulario_password" class="formulario_label">Contraseña</label>
-                        <input class="inp_registro" type="password" name="password" placeholder="********">
+                        <label for="" class="formulario_label">Contraseña</label>
+                        <input class="inp_registro" type="password" id="password" name="password" placeholder="********">
                         <p class="formulario__input-error">
                             La contraseña debe ser de 4 a 12 digitos.
                         </p>
                     </div>
                     <!-- Confirmacion Password Usuario -->
                     <div class="grupo_registro" id="formulario_password2">
-                        <label for="formulario_password2" class="formulario_label">Confirme su Contraseña</label>
-                        <input class="inp_registro" type="password" name="password2" placeholder="********">
+                        <label for="" class="formulario_label">Confirme su Contraseña</label>
+                        <input class="inp_registro" type="password" id="password2" name="password2" placeholder="********">
                         <p class="formulario__input-error">
                             Las contraseñas no coinciden.
                         </p>
                     </div>
                     <!-- Telefono Usuario -->
                     <div class="grupo_registro" id="formulario_telefono">
-                        <label for="formulario_telefono" class="formulario_label">Telefono</label>
-                        <input class="inp_registro" type="number" name="telefono" placeholder="8282 8282">
+                        <label for="" class="formulario_label">Telefono</label>
+                        <input class="inp_registro" type="number" id="telefono" name="telefono" placeholder="8282 8282">
                         <p class="formulario__input-error">
                             El número debe tener entre 8 y 11 dígitos
                         </p>
@@ -142,8 +142,8 @@
                     </div>
                     <!-- Direccion Usuario -->
                     <div class="grupo_registro" id="formulario_direccion">
-                        <label for="formulario_direccion">Direccion de Domicilio</label>
-                        <input class="inp_registro" type="text" name="direccion">
+                        <label for="" class="formulario_label">Direccion de Domicilio</label>
+                        <input class="inp_registro" type="text" id="direccion" name="direccion">
                         <p class="formulario__input-error">
                             Ingrese una ubicacion
                         </p>
@@ -151,7 +151,7 @@
 
                     <!-- Terminos y Condiciones -->
                     <div class="grupo_registro" id="formulario_condiciones">
-                        <input type="checkbox" class="confirm_terminos_registro">
+                        <input type="checkbox" name="terminos_checked" class="confirm_terminos_registro">
                         <b href="#">Al registrarse acepta los terminos y condiciones</b>
                         <p class="formulario__input-error">
                             El usuario debe tener mínimo 4 caracteres y máximo 16 y solo admite
@@ -160,7 +160,7 @@
                     </div>
                     <!-- Boton de Registro de Usuario -->
                     <div>
-                        <a class="buttons_formulario" href="#"><img src="" alt="">Registrarse</a>
+                        <button type="submit" class="buttons_formulario">Registrarse</button>
                     </div>
                 </div>
             </form><!--Registro de nuevos usuarios-->
@@ -176,5 +176,6 @@
     </main>
 <div id="footer"></div>
 <script src="js/inicio_sesion_usuario.js"></script>
+<script src="js/inicio_sesion_registro.js"></script>
 </body>
 </html>
