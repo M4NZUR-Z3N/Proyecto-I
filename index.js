@@ -6,12 +6,7 @@ const app = express();
 
 const path = require('path');
 
-// Handling GET request
-app.get('/', (req, res) => { 
-    res.send('A simple Node App is '
-        + 'running on this server') 
-    res.end() 
-}) 
+
 
 // Port Number
 const PORT = process.env.PORT ||5000;
@@ -19,8 +14,8 @@ const PORT = process.env.PORT ||5000;
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'views')))
+app.use(express.static(path.join(__dirname, 'public')));// se empieza a buscar en la carpeta public. se sigue un orden en gerarquia, pasando de public a views si no se encuentra el documento
+app.use(express.static(path.join(__dirname, 'views')));// se empieza a buscar en la carpeta views.
 
 // Rutas
 
