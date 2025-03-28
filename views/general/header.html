@@ -19,24 +19,24 @@
 </header>
 <script>
 let toggleButtonCheckBox;
-let toggleButton;
+let toggleButtonDEMO;
 let botonIniciarSesion;
 let botonPerfil;
 
 toggleButtonCheckBox = document.querySelector("#check_Inicio-Perfil");
-toggleButton = document.querySelector(".boton_Inicio-Perfil");
+toggleButtonDEMO = document.querySelector(".boton_Inicio-Perfil");
 botonIniciarSesion = document.querySelector("#iniciarSesion_Btn");
 botonPerfil = document.querySelector("#perfil_Btn");
 
 function updateToggleButtonText() {
     if (toggleButtonCheckBox.checked) {
-        toggleButton.textContent = "Cambiar Iniciar Sesion";
+        toggleButtonDEMO.textContent = "Cambiar Iniciar Sesion";
         botonPerfil.classList.add("visualizar");
         botonIniciarSesion.classList.add("no-visualizar");
         botonPerfil.classList.remove("no-visualizar");
         botonIniciarSesion.classList.remove("visualizar");
     } else {
-        toggleButton.textContent = "Cambiar Mi Perfil";
+        toggleButtonDEMO.textContent = "Cambiar Mi Perfil";
         botonPerfil.classList.add("no-visualizar");
         botonIniciarSesion.classList.add("visualizar");
         botonPerfil.classList.remove("visualizar");

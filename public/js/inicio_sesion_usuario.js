@@ -48,10 +48,10 @@
         input.addEventListener("blur",validarFormulario);
     })
 
-    $inputs_registro.forEach((input)=>{
-        input.addEventListener("keyup",validarFormulario);
-        input.addEventListener("blur",validarFormulario);
-    })
+    // $inputs_registro.forEach((input)=>{
+    //     input.addEventListener("keyup",validarFormulario);
+    //     input.addEventListener("blur",validarFormulario);
+    // })
 
     
 // -----------------------------------------------------------------------Display en el Responsive-----------------------------------------------------------------------

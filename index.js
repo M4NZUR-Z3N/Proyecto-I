@@ -20,6 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')))
 
 // Rutas
 
@@ -88,6 +89,8 @@ app.get('/administracion_usuarios', (req, res) => {
     res.render('administracion_usuarios.html');
 });
 
+
+// -----------------------------------------------------------
 // Server Setup
 app.listen(PORT,console.log(
     `Server started on port ${PORT}`));

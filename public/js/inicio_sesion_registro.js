@@ -3,7 +3,7 @@ const $formulario_registro = document.getElementById('formulario_registro_usuari
 const $inputs_registro = document.querySelectorAll('#formulario_registro_usuario input');
 
 //Expresiones Regulares
-const expresiones = {
+const expresiones_registro = {
     nombre: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
     apellidos: /^[a-zA-ZÀ-ÿ\s]{3,40}$/,
     cedula: /^\d{9,11}$/,
@@ -13,7 +13,7 @@ const expresiones = {
     email2:/^[a-zA-Z0-9\_]+@[a-zA-Z]+\.[a-zA-Z]+$/,//a-z para aceptar todos las letras minusculas, A-Z para aceptar letras en mayusculas, 0-9 para aceptar el uso de numeros
 }
 
-const campos={
+const campos_registro={
     nombre: false,
     apellidos: false,
     cedula: false,
@@ -23,7 +23,7 @@ const campos={
     email2: false,
 }
 
-const validarFormulario = (e) =>{
+const validarFormulario_registro = (e) =>{
     switch(e.target.name){
 
         case "email2":
@@ -61,7 +61,7 @@ const validarFormulario = (e) =>{
     }
 }
 
-const validarCampo = (expresion,input,campo) =>{
+const validarCampo_registro = (expresion,input,campo) =>{
     if (expresion.test(input.value)) {
         document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo");//esto no pertenece aca solo es para tener la referencia
         document.querySelector(`#formulario_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo");
