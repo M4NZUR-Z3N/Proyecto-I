@@ -23,7 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 
-
 // Pagina Madre
 app.get('/', (req, res) => {
     res.render('madre_usuario.html');
