@@ -42,12 +42,12 @@ const validarFormulario_registro = (e) =>{
             validarCampo(expresiones.cedula, e.target, "cedula");
         break;
 
-        case "password":
-            validarCampo(expresiones.password, e.target, "password");
+        case "passwordR":
+            validarCampo(expresiones.password, e.target, "passwordR");
             validarPassword2();
         break;
 
-        case "password2":
+        case "passwordR2":
             validarPassword2();
         break;
 
@@ -63,11 +63,9 @@ const validarFormulario_registro = (e) =>{
 
 const validarCampo_registro = (expresion,input,campo) =>{
     if (expresion.test(input.value)) {
-        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo");//esto no pertenece aca solo es para tener la referencia
         document.querySelector(`#formulario_${campo} .formulario__input-error`).classList.remove("formulario__input-error-activo");
         campos[campo]=true;
     } else {
-        document.querySelector(`#grupo_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo");//esto no pertenece aca solo es para tener la referencia
         document.querySelector(`#formulario_${campo} .formulario__input-error`).classList.add("formulario__input-error-activo");
         campos[campo]=false;
     }

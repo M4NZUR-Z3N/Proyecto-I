@@ -6,8 +6,6 @@ const app = express();
 
 const path = require('path');
 
-
-
 // Port Number
 const PORT = process.env.PORT ||5000;
 

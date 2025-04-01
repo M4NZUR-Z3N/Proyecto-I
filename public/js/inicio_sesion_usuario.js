@@ -14,15 +14,9 @@
     }
 
     const campos={
-        nombre: false,
-        apellidos: false,
-        cedula: false,
-        password: false,
-        telefono: false,
-        direccion: false,
         email: false,
-        email2: false,
     }
+    
     //Paso 3 Realizar la accion
     const validarFormulario = (e) =>{
         switch(e.target.name){
