@@ -1,9 +1,8 @@
 //Inicio de Sesion
-    // Creamos las variables
 
     // Ingresamos al HTML con el DOM
-    const $formulario = document.getElementById('formulario_inicio_sesion');
-    const $inputs = document.querySelectorAll('#formulario_inicio_sesion input');
+    const $formulario = document.getElementById('formulario_inicio_sesion', 'formulario_registro_usuario');
+    const $inputs = document.querySelectorAll('#formulario_inicio_sesion input', '#formulario_registro_usuario input');
 
     // const $inputs = document.querySelectorAll('#formulario input');
     // const $formulario = document.getElementById('formulario');
@@ -11,10 +10,12 @@
     //Expresiones Regulares
     const expresiones = {
         email:/^[a-zA-Z0-9\_]+@[a-zA-Z]+\.[a-zA-Z]+$/,//a-z para aceptar todos las letras minusculas, A-Z para aceptar letras en mayusculas, 0-9 para aceptar el uso de numeros
+        email2:/^[a-zA-Z0-9\_]+@[a-zA-Z]+\.[a-zA-Z]+$/,//a-z para aceptar todos las letras minusculas, A-Z para aceptar letras en mayusculas, 0-9 para aceptar el uso de numeros
     }
 
     const campos={
         email: false,
+        email2: false,
     }
     
     //Paso 3 Realizar la accion
@@ -22,6 +23,10 @@
         switch(e.target.name){
             case "email":
                 validarCampo(expresiones.email, e.target, "email");
+            break;
+            case "email2":
+                validarCampo_registro(expresiones.email2, e.target, "email2");
+                console.log("validado");
             break;
         }
     }

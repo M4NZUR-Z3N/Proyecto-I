@@ -171,9 +171,10 @@ input:focus{
 }
 .inp_registro{
     padding-left: 10px;
+    padding: 3px 0 3px 10px;
     width: 95%;
     height: 30px;
-    font-size: 15px;
+    font-size: 18px;
     border-style: none;
     border-radius: 8px;
 }
