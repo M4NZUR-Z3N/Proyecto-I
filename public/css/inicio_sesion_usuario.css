@@ -41,6 +41,20 @@ a{
     transition: 1s;
 }
 
+.grupo_registro_mensaje{
+    background-color: rgb(251, 93, 93);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.bxs-error-alt{
+    font-size: 23px;
+    padding: 5px 0 5px 0;
+}
+
 .contenedor_buttons{
     display: flex;
     flex-direction: column;
@@ -163,6 +177,10 @@ input:focus{
 
 .formulario__input-error-activo{
     display: block;
+}
+
+.grupo_registro_mensaje-activo{
+    display: flex;
 }
 
 /*-----------------------Registro de usuarios-----------------------*/

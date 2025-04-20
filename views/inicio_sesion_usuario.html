@@ -20,7 +20,7 @@
 <div id="header"></div>
     <main>
         <nav class="cont_general"><!--Contenedor general-->
-            <form action="inicio_sesion" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
+            <form action="submit" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
 
                 <h2>Inicio de Sesión</h2>
 
@@ -64,7 +64,7 @@
                 </div>
             </form><!--Inicio de seccion de usuario Fin-->
 
-            <form action="registro_usuario" class="registro" id="formulario_registro_usuario"><!--Registro de nuevos usuarios-->
+            <form action="submit" class="registro" id="formulario_registro_usuario"><!--Registro de nuevos usuarios-->
                 <h2 class="">Registrarse</h2>
 
                 <div class="formulario_registro">
@@ -121,7 +121,7 @@
                     </div>
                     <!-- Distrito Usuario -->
                     <div class="grupo_registro" id="formulario_distritos">
-                        <select class="inp_registro" name="distrito">
+                        <select class="inp_registro" name="distrito" required>
                             <option value="null">Distrito</option>
                             <option value="Mercedes">Mercedes</option>
                             <option value="Sabanilla">Sabanilla</option>
@@ -143,13 +143,17 @@
 
                     <!-- Terminos y Condiciones -->
                     <div class="grupo_registro" id="formulario_condiciones">
-                        <input type="checkbox" name="terminos_checked" class="confirm_terminos_registro">
-                        <b href="#">Al registrarse acepta los terminos y condiciones</b>
+                        <input type="checkbox" name="terminos" class="confirm_terminos_registro">
+                        <a href="#" target="blank">Al registrarse acepta los terminos y condiciones</a>
                         <p class="formulario__input-error">
-                            El usuario debe tener mínimo 4 caracteres y máximo 16 y solo admite
-                            números, letras, guión y guión bajo.
+                            Debes Aceptar los terminos y condiciones.
                         </p>
                     </div>
+
+                    <!-- Mensaje de campos requeridos -->
+                     <div class="grupo_registro_mensaje" id="grupo_registro_mensaje">
+                        <p><i class='bx bxs-error-alt'>Debes completar todos los Campos</i></p>
+                     </div>
                     <!-- Boton de Registro de Usuario -->
                     <div>
                         <button type="submit" href="/madre_usuario.html" class="buttons_formulario">Registrarse</button>
@@ -168,6 +172,6 @@
     </main>
 <div id="footer"></div>
 <script src="js/inicio_sesion_usuario.js"></script>
-<!-- <script src="js/inicio_sesion_registro.js"></script> -->
+<script src="js/inicio_sesion_registro.js"></script>
 </body>
 </html>
