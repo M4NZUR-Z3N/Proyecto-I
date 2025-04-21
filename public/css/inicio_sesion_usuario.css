@@ -1,5 +1,9 @@
 /*-----------------------Ajustes Generales-----------------------*/
-
+main{
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .cont_general{
     display: flex;
     grid-template-columns: 1fr 1fr;
@@ -9,8 +13,6 @@
 
 h2{
     font-size: 35px;
-    margin-top: 48px;
-    margin-left: 25px;
 }
 
 a{
@@ -24,12 +26,18 @@ a{
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 30%;
+    width: 35%;
+    /* max-width: 900px; */
+    min-width: 320px;
     padding: 20px;
     box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
     background-color: rgba(217, 217, 217, 0.85);
     border-radius: 15px;
     transition: 1s;
+}
+
+.registro{
+    display: none;
 }
 
 
@@ -50,6 +58,17 @@ a{
     display: none;
 }
 
+#switch_inicio_session, #switch_registro{
+    margin: 0;
+}
+
+#button_switch_inicio, #button_switch_registro{
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    transition: 0.8s;
+}
+
 .bxs-error-alt{
     font-size: 23px;
     padding: 5px 0 5px 0;
@@ -62,7 +81,7 @@ a{
     margin-top: 20px;
 }
 
-.buttons_formulario{
+.buttons_formulario, .label_buttons_switch{
     display: flex;
     border-style: none;
     align-items: center;
@@ -73,6 +92,10 @@ a{
     padding: 10px;
     font-size: 18px;
     transition: 0.5s;
+}
+
+.label_buttons_switch{
+    margin: 0;
 }
 /*-----------------------Fin Ajustes Generales-----------------------*/
 /*-----------------------inicio de Sesion-----------------------*/
@@ -127,7 +150,7 @@ a{
 }
 
 #btn_registro{
-    display: none;
+    display: flex;
     font-size: 18px;
     margin-top: 20px;
     padding: 10px;
@@ -230,9 +253,5 @@ input:focus{
         display: none;
         width: 95%;
         height: auto;
-    }
-
-    .btn_registro{
-        display: flex;
     }
 }

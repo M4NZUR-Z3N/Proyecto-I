@@ -102,6 +102,11 @@
 
         if (campos.email2 && campos.nombre && campos.apellidos && campos.cedula && campos.direccion && campos.distrito && campos.correo.passwordR && campos.telefono && terminos.checked) {
             document.getElementById("grupo_registro_mensaje").classList.remove("grupo_registro_mensaje-activo");
+            
+
+            setTimeout(() => {
+                location.reload();
+            }, 4000);//4 segundos
         } else {
             document.getElementById("grupo_registro_mensaje").classList.add("grupo_registro_mensaje-activo");
         }
