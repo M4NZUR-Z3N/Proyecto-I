@@ -96,7 +96,6 @@
         input.addEventListener("keyup",validarFormulario_registro);
         input.addEventListener("blur",validarFormulario_registro);
     })
-
     // $formulario.addEventListener("submit",(e)=>{
     //     e.preventDefault();//Evita que se recargue la pagina
     

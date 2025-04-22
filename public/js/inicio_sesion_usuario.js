@@ -56,9 +56,9 @@
 // -----------------------------------------------------------------------Display en el Responsive-----------------------------------------------------------------------
     // Noticias avisos usuario.
     // ingresamos al DOM 
-    // const columna_inicio_sesion = document.getElementById('formulario_inicio_sesion');
-    // const columna_registro_usuario = document.getElementById('formulario_registro_usuario');
-    // const toggleButton = document.getElementById('btn_registro');
+    const columna_inicio_sesion = document.getElementById('formulario_inicio_sesion');
+    const columna_registro_usuario = document.getElementById('formulario_registro_usuario');
+    const toggleButton = document.getElementById('btn_registro');
 
     // const checkScreenSize = () => {
     //     if(window.innerWidth >= 900) {//si la pantalla es grande, se tienen que mostrar ambas columnas, sin el boton
@@ -76,18 +76,18 @@
     // //llamamos la funcion al cargar pagina
     // checkScreenSize();
 
-    // // escuchamos el evento
-    // toggleButton.addEventListener('click',() => {
-    //     if(toggleButton.textContent === "Registrarse"){
-    //         toggleButton.textContent ="Iniciar Sesion";
-    //         columna_registro_usuario.style.display = 'block';
-    //         columna_inicio_sesion.style.display = 'none';
-    //     }else{
-    //         toggleButton.textContent = "Registrarse";
-    //         columna_registro_usuario.style.display = 'none';
-    //         columna_inicio_sesion.style.display = 'block';
-    //     }
-    // });
+    // escuchamos el evento
+    toggleButton.addEventListener('click',() => {
+        if(toggleButton.textContent === "Registrarse"){
+            toggleButton.textContent ="Iniciar Sesion";
+            columna_registro_usuario.style.display = 'block';
+            columna_inicio_sesion.style.display = 'none';
+        }else{
+            toggleButton.textContent = "Registrarse";
+            columna_registro_usuario.style.display = 'none';
+            columna_inicio_sesion.style.display = 'block';
+        }
+    });
 
-    // //llamamos la funcion que escucha las dimenciones de la ventana
-    //     window.addEventListener('resize',checkScreenSize);
+    //llamamos la funcion que escucha las dimenciones de la ventana
+        window.addEventListener('resize',checkScreenSize);
