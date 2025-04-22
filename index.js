@@ -1,10 +1,16 @@
 // Requiring module
 const express = require('express');
 
+
+const bcrypt = require('bcrypt');
+
 // Creating express object
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
+
 const path = require('path');
+const user = require('./models/users.js');
 
 // Port Number
 const PORT = process.env.PORT ||5000;
@@ -82,6 +88,53 @@ app.get('/administracion_usuarios', (req, res) => {
     res.render('administracion_usuarios.html');
 });
 
+//POST
+
+app.post('/register', async (req, res) => {
+    try {
+        let data = new user({
+            nombre: req.body.nombre,
+            apellidos: req.body.apellidos,
+            cedula: req.body.cedula,
+            correo: req.body.email2,
+            password: await bcrypt.hash(req.body.passwordR, 10),
+            telefono: req.body.telefono,
+            distrito: req.body.distrito,
+            direccion: req.body.direccion
+        });
+
+        await data.save();
+        console.log("Usuario registrado exitosamente");
+        res.redirect('/login');
+    } catch (err) {
+        console.error("Error al registrar el usuario:", err);
+        res.status(500).send("Error al registrar el usuario");
+    }
+});
+
+app.post('/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const usuario = await user.findOne({ correo: email });
+
+        if (usuario) {
+            const match = await bcrypt.compare(password, usuario.password);
+            if (match) {
+                console.log("Se inició sesión correctamente");
+                res.redirect('/'); // Redirige al usuario a la página principal
+            } else {
+                console.log("Las contraseñas no coinciden");
+                res.status(401).send("Las contraseñas no coinciden");
+            }
+        } else {
+            console.log("El usuario no existe");
+            res.status(404).send("El usuario no existe");
+        }
+    } catch (err) {
+        console.error("Error al iniciar sesión:", err);
+        res.status(500).send("Error al iniciar sesión");
+    }
+});
 
 // -----------------------------------------------------------
 // Server Setup

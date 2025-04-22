@@ -1,8 +1,8 @@
 // para registros
 
 
-    // const $formulario_registro = document.getElementById('formulario_registro_usuario');
-    // const $inputs_registro = document.querySelectorAll('#formulario_registro_usuario input');
+    const formulario_registro = document.getElementById('formulario_registro_usuario');
+    const inputs_registro = document.querySelectorAll('#formulario_registro_usuario input');
     console.log("IN");
 
     //Expresiones Regulares
@@ -20,48 +20,50 @@
         nombre: false,
         apellidos: false,
         cedula: false,
-        password: false,
+        passwordR: false,
         telefono: false,
         direccion: false,
         email2: false,
+        distrito: false,
     }
 
     const validarFormulario_registro = (e) =>{
         switch(e.target.name){
 
             case "nombre":
-                validarCampo_registro(expresiones.nombre, e.target, "nombre");
-                console.log("validado");
+                validarCampo_registro(expresiones_registro.nombre, e.target, "nombre");
             break;
-
             case "apellidos":
-                validarCampo_registro(expresiones.apellidos, e.target, "apellidos");
+                validarCampo_registro(expresiones_registro.apellidos, e.target, "apellidos");
             break;
-
             case "cedula":
-                validarCampo_registro(expresiones.cedula, e.target, "cedula");
+                validarCampo_registro(expresiones_registro.cedula, e.target, "cedula");
             break;
-
             case "email2":
-                validarCampo_registro(expresiones.email2, e.target, "email2");
-                console.log("validado");
+                validarCampo_registro(expresiones_registro.email2, e.target, "email2");
             break;
-                
             case "passwordR":
-                validarCampo_registro(expresiones.passwordR, e.target, "passwordR");
+                validarCampo_registro(expresiones_registro.passwordR, e.target, "passwordR");
                 validarPassword2();
             break;
-
             case "passwordR2":
                 validarPassword2();
             break;
-
             case "telefono":
-                validarCampo_registro(expresiones.telefono, e.target, "telefono");
+                validarCampo_registro(expresiones_registro.telefono, e.target, "telefono");
             break;
-
             case "direccion":
-                validarCampo_registro(expresiones.direccion, e.target, "direccion");
+                validarCampo_registro(expresiones_registro.direccion, e.target, "direccion");
+            break;
+            case "distrito":
+                const selectDistrito = e.target;
+                if(selectDistrito.value !== "null"){
+                    document.querySelector(`#formulario_distritos .formulario__input-error`).classList.remove("formulario__input-error-activo");
+                    campos_registro["distrito"]=true;
+                } else {
+                    document.querySelector(`#formulario_distritos .formulario__input-error`).classList.add("formulario__input-error-activo");
+                    campos_registro["distrito"]=false;
+                }
             break;
         }
     }
@@ -77,21 +79,36 @@
     }
 
     const validarPassword2 = () => {
-        const password = document.querySelector('input[name="password"]');
-        const password2 = document.querySelector('input[name="password2"]');
-        const error = document.querySelector(`#formulario_password2 .formulario__input-error`);
+        const passwordR = document.getElementById("passwordR");
+        const passwordR2 = document.getElementById("passwordR2");
 
-        if (password.value !== password2.value) {
-            error.classList.add("formulario__input-error-activo");
-            campos_registro["password"] = false;
+        if (passwordR.value !== passwordR2.value) {
+            document.querySelector(`#formulario_passwordR2 .formulario__input-error`).classList.add("formulario__input-error-activo");
+            campos_registro["passwordR"] = false;
         } else {
-            error.classList.remove("formulario__input-error-activo");
-            campos_registro["password"] = true;
+            document.querySelector(`#formulario_passwordR2 .formulario__input-error`).classList.remove("formulario__input-error-activo");
+            campos_registro["passwordR"] = true;
         }
     }
 
     //escuchamos el evento
-    $inputs_registro.forEach((input)=>{
+    inputs_registro.forEach((input)=>{
         input.addEventListener("keyup",validarFormulario_registro);
         input.addEventListener("blur",validarFormulario_registro);
     })
+    // $formulario.addEventListener("submit",(e)=>{
+    //     e.preventDefault();//Evita que se recargue la pagina
+    
+    //     const $terminos = document.getElementById("terminos");
+    //     if(campos.correo && campos.nombre && campos.password && campos.telefono && campos.usuario && $terminos.checked){
+    //         document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-activo");
+    //         document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
+    
+    //         setTimeout(()=>{
+    //             location.reload();
+    //         },4000)
+    
+    //     }else{
+    //         document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo");
+    //     }
+    // })

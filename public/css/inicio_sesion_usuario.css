@@ -1,5 +1,9 @@
 /*-----------------------Ajustes Generales-----------------------*/
-
+main{
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 .cont_general{
     display: flex;
     grid-template-columns: 1fr 1fr;
@@ -9,6 +13,7 @@
 
 h2{
     font-size: 35px;
+<<<<<<< HEAD
     margin-top: 48px;
     margin-left: 25px;
     display: inline-block;
@@ -22,6 +27,8 @@ h2{
 
 .registro h2{
     margin-bottom: 16px;
+=======
+>>>>>>> e2a0488c609a4de0134ebe980b7da13e4d38424d
 }
 
 a{
@@ -35,11 +42,17 @@ a{
     justify-content: center;
     align-items: center;
     height: auto;
-    width: 30%;
+    width: 35%;
+    /* max-width: 900px; */
+    min-width: 320px;
     padding: 20px;
     border-radius: 5px;
     background-color: rgb(137, 175, 247);
     transition: 1s;
+}
+
+.registro{
+    display: none;
 }
 
 
@@ -51,6 +64,31 @@ a{
     transition: 1s;
 }
 
+.grupo_registro_mensaje{
+    background-color: rgb(251, 93, 93);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+#switch_inicio_session, #switch_registro{
+    margin: 0;
+}
+
+#button_switch_inicio, #button_switch_registro{
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    transition: 0.8s;
+}
+
+.bxs-error-alt{
+    font-size: 23px;
+    padding: 5px 0 5px 0;
+}
+
 .contenedor_buttons{
     display: flex;
     flex-direction: column;
@@ -58,7 +96,7 @@ a{
     margin-top: 20px;
 }
 
-.buttons_formulario{
+.buttons_formulario, .label_buttons_switch{
     display: flex;
     border-style: none;
     align-items: center;
@@ -70,6 +108,10 @@ a{
     padding: 10px;
     font-size: 18px;
     transition: 0.5s;
+}
+
+.label_buttons_switch{
+    margin: 0;
 }
 /*-----------------------Fin Ajustes Generales-----------------------*/
 /*-----------------------inicio de Sesion-----------------------*/
@@ -124,7 +166,7 @@ a{
 }
 
 #btn_registro{
-    display: none;
+    display: flex;
     font-size: 18px;
     margin-top: 20px;
     padding: 10px;
@@ -176,6 +218,10 @@ input:focus{
     display: block;
 }
 
+.grupo_registro_mensaje-activo{
+    display: flex;
+}
+
 /*-----------------------Registro de usuarios-----------------------*/
 .grupo_registro{
     padding: 5px 0;
@@ -223,9 +269,5 @@ input:focus{
         display: none;
         width: 95%;
         height: auto;
-    }
-
-    .btn_registro{
-        display: flex;
     }
 }
