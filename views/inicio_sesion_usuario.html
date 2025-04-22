@@ -20,12 +20,8 @@
 <div id="header"></div>
     <main>
         <nav class="cont_general"><!--Contenedor general-->
-            <form action="submit" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
-
+            <form action="/login" method="post" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
                 <h2>Inicio de Sesión</h2>
-
-                <div class="formulario_inicio">
-
                     <!-- Correo inicio -->
                     <div class="grupo_inicio" id="grupo_email">
                         <input class="inp_inicio" id="inp_email" type="email" name="email" placeholder="Correo">
@@ -39,7 +35,7 @@
                         <input class="inp_inicio" id="inp_password" type="password" name="password" placeholder="Contraseña">
                         <!-- <button href="#"><i class='inp_error bx bx-low-vision'></i><i class='inp_error bx bxs-low-vision'></i></button>  botones para visualizar la contraseña -->
                     </div>
-
+    
                     <!-- Password recovery -->
                     <div class="rec_contra">
                         <a href="forgot_password.html" class="rec_contra-button">¿Olvidaste tu Contraseña?</a>
@@ -47,118 +43,117 @@
                     
                     <!-- Boton inicio sesion -->
                     <div class="contenedor_buttons">
-                        <a class="buttons_formulario" href="/madre_usuario.html" id="inicio_sesion_btn">Iniciar Sesión</a>
+                        <button type="submit" class="buttons_formulario" id="inicio_sesion_btn">Iniciar Sesión</button>
                     </div>
-
+    
                     <!-- Una rayita para mas estetica -->
                     <div class="contenedor_buttons">
                         <div class="divisor_inicio">
                             <span id="circle"></span>
                         </div>
                     </div>
-
+    
                     <!-- Boton de inicio de Sesion con Google -->
                     <div class="contenedor_buttons">
                         <a class="buttons_formulario" href="#" id="inicio_google_btn"><img class="icono_gmail" src="img/gmail.png" alt="Icono de Gmail">Iniciar Sesión con Google</a>
                     </div>
                 </div>
-            </form><!--Inicio de seccion de usuario Fin-->
+            </form><!--Inicio de seccion de usuario Final!-->
 
-            <form action="submit" class="registro" id="formulario_registro_usuario"><!--Registro de nuevos usuarios-->
+            <form action="/register" method="post" class="registro" id="formulario_registro_usuario"><!--Registro de nuevos usuarios-->
                 <h2 class="">Registrarse</h2>
+                    <div class="formulario_registro">
+                        <!-- Nombre Usuario -->
+                        <div class="grupo_registro" id="formulario_nombre">
+                            <input class="inp_registro" type="text" id="nombre" name="nombre" placeholder="Nombre">
+                            <p class="formulario__input-error">
+                                El usuario debe tener mínimo 3 caracteres y solo admite letras y espacios.
+                            </p>
+                        </div>
+                        <!-- Apellidos Usuario -->
+                        <div class="grupo_registro" id="formulario_apellidos">
+                            <input class="inp_registro" type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
+                            <p class="formulario__input-error">
+                                El usuario debe tener mínimo 3 caracteres y solo admite letras y espacios.
+                            </p>
+                        </div>
+                        <!-- Cedula Usuario -->
+                        <div class="grupo_registro" id="formulario_cedula">
+                            <input class="inp_registro" type="text" id="cedula" name="cedula" placeholder="Cedula">
+                            <p class="formulario__input-error">
+                                La Cedula debe tener mínimo 9 caracteres y solo admite numeros y guiones.
+                            </p>
+                        </div>
+                        <!-- Correo Usuario -->
+                        <div class="grupo_registro" id="formulario_email2">
+                            <input class="inp_registro" type="email" id="email2" name="email2" placeholder="Correo">
+                            <p class="formulario__input-error">
+                                Debe agregar un correo con la siguiente estructura dato1@dato2.com
+                                dato1 acepta letras,guión bajo y números
+                                dato2 acepta solo letras.
+                            </p>
+                        </div>
+                        <!-- Password Usuario -->
+                        <div class="grupo_registro" id="formulario_passwordR">
+                            <input class="inp_registro" type="password" id="passwordR" name="passwordR" placeholder="Contraseña">
+                            <p class="formulario__input-error">
+                                La contraseña debe ser de 4 a 12 digitos.
+                            </p>
+                        </div>
+                        <!-- Confirmacion Password Usuario -->
+                        <div class="grupo_registro" id="formulario_passwordR2">
+                            <input class="inp_registro" type="password" id="passwordR2" name="passwordR2" placeholder="Confirme su Contraseña">
+                            <p class="formulario__input-error">
+                                Las contraseñas no coinciden.
+                            </p>
+                        </div>
+                        <!-- Telefono Usuario -->
+                        <div class="grupo_registro" id="formulario_telefono">
+                            <input class="inp_registro" type="number" id="telefono" name="telefono" placeholder="Telefono">
+                            <p class="formulario__input-error">
+                                El número debe tener entre 8 y 11 dígitos
+                            </p>
+                        </div>
+                        <!-- Distrito Usuario -->
+                        <div class="grupo_registro" id="formulario_distritos">
+                            <select class="inp_registro" name="distrito" required>
+                                <option value="null">Distrito</option>
+                                <option value="Mercedes">Mercedes</option>
+                                <option value="Sabanilla">Sabanilla</option>
+                                <option value="San Pedro">San Pedro</option>
+                                <option value="San Rafael">San Rafael</option>
+                            </select>
+                            <p class="formulario__input-error">
+                                Seleccione un Distrito
+                            </p>
+                        </div>
+                        <!-- Direccion Usuario -->
+                        <div class="grupo_registro" id="formulario_direccion">
+                            <a>Direccion de Domicilio</a>
+                            <input class="inp_registro" type="text" id="direccion" name="direccion">
+                            <p class="formulario__input-error">
+                                Ingrese una ubicacion
+                            </p>
+                        </div>
 
-                <div class="formulario_registro">
-                    <!-- Nombre Usuario -->
-                    <div class="grupo_registro" id="formulario_nombre">
-                        <input class="inp_registro" type="text" id="nombre" name="nombre" placeholder="Nombre">
-                        <p class="formulario__input-error">
-                            El usuario debe tener mínimo 3 caracteres y solo admite letras y espacios.
-                        </p>
-                    </div>
-                    <!-- Apellidos Usuario -->
-                    <div class="grupo_registro" id="formulario_apellidos">
-                        <input class="inp_registro" type="text" id="apellidos" name="apellidos" placeholder="Apellidos">
-                        <p class="formulario__input-error">
-                            El usuario debe tener mínimo 3 caracteres y solo admite letras y espacios.
-                        </p>
-                    </div>
-                    <!-- Cedula Usuario -->
-                    <div class="grupo_registro" id="formulario_cedula">
-                        <input class="inp_registro" type="text" id="cedula" name="cedula" placeholder="Cedula">
-                        <p class="formulario__input-error">
-                            La Cedula debe tener mínimo 9 caracteres y solo admite numeros y guiones.
-                        </p>
-                    </div>
-                    <!-- Correo Usuario -->
-                    <div class="grupo_registro" id="formulario_email2">
-                        <input class="inp_registro" type="email" id="email2" name="email2" placeholder="Correo">
-                        <p class="formulario__input-error">
-                            Debe agregar un correo con la siguiente estructura dato1@dato2.com
-                            dato1 acepta letras,guión bajo y números
-                            dato2 acepta solo letras.
-                        </p>
-                    </div>
-                    <!-- Password Usuario -->
-                    <div class="grupo_registro" id="formulario_passwordR">
-                        <input class="inp_registro" type="password" id="passwordR" name="passwordR" placeholder="Contraseña">
-                        <p class="formulario__input-error">
-                            La contraseña debe ser de 4 a 12 digitos.
-                        </p>
-                    </div>
-                    <!-- Confirmacion Password Usuario -->
-                    <div class="grupo_registro" id="formulario_passwordR2">
-                        <input class="inp_registro" type="password" id="passwordR2" name="passwordR2" placeholder="Confirme su Contraseña">
-                        <p class="formulario__input-error">
-                            Las contraseñas no coinciden.
-                        </p>
-                    </div>
-                    <!-- Telefono Usuario -->
-                    <div class="grupo_registro" id="formulario_telefono">
-                        <input class="inp_registro" type="number" id="telefono" name="telefono" placeholder="Telefono">
-                        <p class="formulario__input-error">
-                            El número debe tener entre 8 y 11 dígitos
-                        </p>
-                    </div>
-                    <!-- Distrito Usuario -->
-                    <div class="grupo_registro" id="formulario_distritos">
-                        <select class="inp_registro" name="distrito" required>
-                            <option value="null">Distrito</option>
-                            <option value="Mercedes">Mercedes</option>
-                            <option value="Sabanilla">Sabanilla</option>
-                            <option value="San Pedro">San Pedro</option>
-                            <option value="San Rafael">San Rafael</option>
-                        </select>
-                        <p class="formulario__input-error">
-                            Seleccione un Distrito
-                        </p>
-                    </div>
-                    <!-- Direccion Usuario -->
-                    <div class="grupo_registro" id="formulario_direccion">
-                        <a>Direccion de Domicilio</a>
-                        <input class="inp_registro" type="text" id="direccion" name="direccion">
-                        <p class="formulario__input-error">
-                            Ingrese una ubicacion
-                        </p>
-                    </div>
+                        <!-- Terminos y Condiciones -->
+                        <div class="grupo_registro" id="formulario_condiciones">
+                            <input type="checkbox" name="terminos" class="confirm_terminos_registro">
+                            <a href="#" target="blank">Al registrarse acepta los terminos y condiciones</a>
+                            <p class="formulario__input-error">
+                                Debes Aceptar los terminos y condiciones.
+                            </p>
+                        </div>
 
-                    <!-- Terminos y Condiciones -->
-                    <div class="grupo_registro" id="formulario_condiciones">
-                        <input type="checkbox" name="terminos" class="confirm_terminos_registro">
-                        <a href="#" target="blank">Al registrarse acepta los terminos y condiciones</a>
-                        <p class="formulario__input-error">
-                            Debes Aceptar los terminos y condiciones.
-                        </p>
+                        <!-- Mensaje de campos requeridos -->
+                        <div class="grupo_registro_mensaje" id="grupo_registro_mensaje">
+                            <p><i class='bx bxs-error-alt'>Debes completar todos los Campos</i></p>
+                        </div>
+                        <!-- Boton de Registro de Usuario -->
+                        <div>
+                            <button type="submit" class="buttons_formulario">Registrarse</button>
+                        </div>
                     </div>
-
-                    <!-- Mensaje de campos requeridos -->
-                     <div class="grupo_registro_mensaje" id="grupo_registro_mensaje">
-                        <p><i class='bx bxs-error-alt'>Debes completar todos los Campos</i></p>
-                     </div>
-                    <!-- Boton de Registro de Usuario -->
-                    <div>
-                        <button type="submit" href="/madre_usuario.html" class="buttons_formulario">Registrarse</button>
-                    </div>
-                </div>
             </form><!--Registro de nuevos usuarios-->
             
         </nav><!--Contenedor general-->

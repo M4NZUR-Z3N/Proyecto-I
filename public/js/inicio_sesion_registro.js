@@ -96,16 +96,7 @@
         input.addEventListener("keyup",validarFormulario_registro);
         input.addEventListener("blur",validarFormulario_registro);
     })
-    formulario_registro.addEventListener("submit", (e)=>{
-        e.preventDefault();//evita que la pagina se recargue
-        const terminos = getElementById("terminos");
 
-        if (campos.email2 && campos.nombre && campos.apellidos && campos.cedula && campos.direccion && campos.distrito && campos.correo.passwordR && campos.telefono && terminos.checked) {
-            document.getElementById("grupo_registro_mensaje").classList.remove("grupo_registro_mensaje-activo");
-        } else {
-            document.getElementById("grupo_registro_mensaje").classList.add("grupo_registro_mensaje-activo");
-        }
-    })
     // $formulario.addEventListener("submit",(e)=>{
     //     e.preventDefault();//Evita que se recargue la pagina
     
