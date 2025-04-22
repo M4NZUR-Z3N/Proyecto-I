@@ -10,14 +10,14 @@ p{
 }
 
 .cont_general{
-    background-color: rgb(225, 225, 225);
+    background-color: #89aff7;
     width: 50%;
     height: auto;
     display: flex;
     flex-direction: column;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
+    box-shadow: 0px 0px 10px rgb(180, 180, 180);
 }
 
 
@@ -78,13 +78,13 @@ p{
 .boton_noticias-avisos{
     cursor: pointer;
     display: block;
-    color: rgb(29, 56, 147);
+    color: white;
     border-style: none;
     border-radius: 12px;
     padding: 10px 40px;
     font-size: 18px;
     transition: 0.5s;
-    background-color: rgb(183, 183, 183);
+    background-color: #5067a7;
 }
 
 #mensaje_confirmacion{

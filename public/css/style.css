@@ -191,6 +191,10 @@ footer{
 }
 
 @media(max-width: 1000px){
+    main{
+        padding: 40px 5px;
+    }
+
     .checkbtn{
         display: block;
     }
@@ -222,5 +226,29 @@ footer{
 
     .logoFooter{
         display: none;
+    }
+
+    .contactos__info{
+        height: 70px;
+        width: 160px;
+        min-width: 160px;
+        padding: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        border-radius: 2px;
+    }
+    
+    .contactos__info h6{
+        font-size: 15px;
+        position: relative;
+        left: 25%;
+    }
+
+    .contactos__info p{
+        display: flex;
+        flex-direction: column;
+        font-size: 10px;
     }
 }
