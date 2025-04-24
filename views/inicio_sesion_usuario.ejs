@@ -24,11 +24,15 @@
         </div>
         <nav class="cont_general"><!--Contenedor general-->
             <form action="/login" method="post" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
-                
+
                 <h2>Inicio de Sesión</h2>
 
-                <div class="formulario_inicio">
-
+                <!-- Mensaje de error -->
+                <% if (typeof error !== 'undefined') { %>
+                    <div class="mensaje_no_existe">
+                        <p><%= error %></p>
+                    </div>
+                <% } %>
                     <!-- Correo inicio -->
                     <div class="grupo_inicio" id="grupo_email">
                         <input class="inp_inicio" id="inp_email" type="email" name="email" placeholder="Correo">

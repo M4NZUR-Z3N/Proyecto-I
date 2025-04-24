@@ -184,6 +184,15 @@ a{
     display: none;
     transition: 0.8s;
 }
+
+.mensaje_no_existe{
+    align-items: center;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(251, 93, 93);
+    color: rgb(0, 0, 0);
+}
 /*-----------------------Fin inicio de Sesion-----------------------*/
 
 
