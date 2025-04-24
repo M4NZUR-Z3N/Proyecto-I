@@ -70,13 +70,17 @@ h2{
 .denuncia a, .aviso a {
     background-color: rgb(54, 153, 54);
     color: white;
-    border: 1px solid rgb(137, 175, 247);
     border-radius: 10px;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
+}
+
+.denuncia a:hover,  .aviso a:hover{
+    transition: 0.5s;
+    background-color: rgb(10, 197, 10);
 }
 
 /* Bloque de Noticias mas recientes */
@@ -130,13 +134,17 @@ h2{
 .servicios a, .social a {
     background-color: rgb(54, 153, 54);
     color: white;
-    border: 1px solid rgb(137, 175, 247);
     border-radius: 10px;
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     display: inline-block;
+}
+
+.servicios a:hover,  .social a:hover{
+    transition: 0.5s;
+    background-color: rgb(10, 197, 10);
 }
 
 .imagenesEjemploServicios{

@@ -59,10 +59,14 @@ input{
 
 .noticia{
     margin-top: 15px;
-    background-color: #89aff7;
+    background-color: #1d4a9e;
     border-radius: 5px;
     padding-bottom: 5px;
     border-bottom: solid 1px rgba(0, 0, 0, 0.555);
+}
+
+#nombre_usuario h4{
+    color: white;
 }
 
 #nombre_usuario{
@@ -112,15 +116,6 @@ input{
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.img_titulo h4{
-    width: auto;
-    white-space: nowrap;
-    background-color: #1d4a9e;
-    border-radius: 10px;
-    color: white;
-    padding: 10px;
 }
 
 .fecha_hora{

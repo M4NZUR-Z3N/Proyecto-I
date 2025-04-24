@@ -13,22 +13,19 @@ main{
 
 h2{
     font-size: 35px;
-<<<<<<< HEAD
     margin-top: 48px;
-    margin-left: 25px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     width: auto;
     white-space: nowrap;
     background-color: #1d4a9e;
     border-radius: 10px;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px;
 }
 
 .registro h2{
     margin-bottom: 16px;
-=======
->>>>>>> e2a0488c609a4de0134ebe980b7da13e4d38424d
 }
 
 a{
@@ -40,7 +37,6 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     height: auto;
     width: 35%;
     /* max-width: 900px; */
@@ -51,10 +47,13 @@ a{
     transition: 1s;
 }
 
+.inicio{
+    display: flex;
+}
+
 .registro{
     display: none;
 }
-
 
 .formulario_inicio, .formulario_registro{
     width: 100%;
@@ -110,9 +109,6 @@ a{
     transition: 0.5s;
 }
 
-.label_buttons_switch{
-    margin: 0;
-}
 /*-----------------------Fin Ajustes Generales-----------------------*/
 /*-----------------------inicio de Sesion-----------------------*/
 .grupo_inicio{
@@ -172,7 +168,9 @@ a{
     padding: 10px;
     border-style: none;
     border-radius: 10px;
-    background-color: rgb(183, 183, 183);
+    background-color: rgb(80, 103, 167);
+    color: white;
+    margin-bottom: 15px;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -246,28 +244,3 @@ input:focus{
     height: 25px;
 }
 /*-----------------------Fin Registro de usuarios-----------------------*/
-
-/* Responsive */
-
-@media(max-width:900px){
-    h2{
-        font-size: 30px;
-        margin-top: 20px;
-    }
-
-    .cont_general{
-        display: flex;
-        flex-direction: column;
-    }
-
-    .inicio{
-        width: 95%;
-        height: auto;
-    }
-
-    .registro{
-        display: none;
-        width: 95%;
-        height: auto;
-    }
-}

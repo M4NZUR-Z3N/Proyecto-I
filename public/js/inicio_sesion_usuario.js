@@ -52,7 +52,6 @@
     //     input.addEventListener("blur",validarFormulario);
     // })
 
-    
 // -----------------------------------------------------------------------Display en el Responsive-----------------------------------------------------------------------
     // Noticias avisos usuario.
     // ingresamos al DOM 
