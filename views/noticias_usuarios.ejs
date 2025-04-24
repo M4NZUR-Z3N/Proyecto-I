@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/noticias_usuario.css">
+    <link rel="icon" href="img/LogoMuniPequeño.ico">
+    <title>Noticias/Avisos</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        $(function(){
+            $("#header").load("general/header.html");
+            $("#footer").load("general/footer.html");
+        });
+    </script>
+</head>
+<body>
+    <div id="header"></div> <!-- Juan jose, copiar y pegar todo el main  -->
+    <main>
+        <div class="cont_botton_aviso">
+            <button id="button_noticias_avisos">Avisos</button>
+        </div> 
+        <div class="cont_general">
+            <!-- NOTICIAS -->
+            <div id="display_noticias">
+                <h3>Noticias</h3>
+                <% noticias.forEach(noticia => { %>
+                    <div class="noticia">
+                        <div id="perfil_usuario">
+                            <div class="img_titulo">
+                                <img src="img/ImagenMiPerfilVacio.png" class="img_usuario" id="img_usuario" alt="">
+                                <a href="#" id="nombre_usuario"><h4><%= noticia.titulo %></h4></a>
+                            </div>
+                            <div class="fecha_hora">
+                                <a href="#" class="grupo_fecha" id="fecha_publicacion"><%= noticia.fecha.toISOString().split('T')[0] %></a>
+                            </div>
+                        </div>
+                        <div class="text_noticia">
+                            <h4 class="titulo_noticia"><%= noticia.titulo %></h4>
+                            <p><%= noticia.descripcion %></p>
+                        </div>
+                        <% if (noticia.archivo) { %>
+                            <div class="cont_img-noticia">
+                                <img src="/uploads/<%= noticia.archivo.filename %>" class="imgs_noticias" alt="Imagen de la noticia">
+                            </div>
+                        <% } %>
+                    </div>
+                <% }); %>
+            </div>
+    
+            <!-- AVISOS -->
+            <div id="display_avisos">
+                <h3>Avisos</h3>
+                <% avisos.forEach(aviso => { %>
+                    <div class="avisos">
+                        <div class="cont_avisos">
+                            <p class="date"><%= aviso.fecha.toISOString().split('T')[0] %></p>
+                            <h4 class="titulo-aviso"><%= aviso.titulo %></h4>
+                            <p class="text_aviso"><%= aviso.descripcion %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+        <a class="modo__dev" href="/noticias_avisos_admin.html">Modo Administrador</a>
+    </main>
+    
+    <div id="footer"></div>
+    <script src="js/noticias_usuario.js"></script>
+</body>
+</html>

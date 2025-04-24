@@ -8,9 +8,34 @@ const bcrypt = require('bcrypt');
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
-
+const multer = require('multer'); //Juan Jose se agrega multer para la carga de archivos
 const path = require('path');
 const user = require('./models/users.js');
+const noticia = require('./models/noticia.js'); // Juan Jose se agrega noticia para la carga de archivos
+const aviso = require('./models/avisos.js');// Juan Jose se agrega aviso para la carga de archivos
+const denuncia = require('./models/denuncias.js');// Juan Jose se agrega denuncia para la carga de archivos
+
+// Juan José esta es la Configuración de almacenamiento de Multer
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, 'public', 'uploads')); // Ruta a la subcarpeta uploads dentro de public
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}_${file.originalname}`); // Nombre del archivo
+    }
+});
+
+const upload = multer({ storage: storage });
+
+// Ruta para manejar la carga de archivos
+app.post('/upload', upload.single('file'), (req, res) => {
+    if (req.file) {
+        res.json({ message: 'Archivo subido exitosamente!', file: req.file });
+    } else {
+        res.status(400).json({ message: 'No se subió ningún archivo' });
+    }
+});
+
 
 // Port Number
 const PORT = process.env.PORT ||5000;
@@ -20,7 +45,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));// se empieza a buscar en la carpeta public. se sigue un orden en gerarquia, pasando de public a views si no se encuentra el documento
 app.use(express.static(path.join(__dirname, 'views')));// se empieza a buscar en la carpeta views.
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Rutas
 
 // Pagina Madre
@@ -58,19 +83,38 @@ app.get('/social', (req, res) => {
     res.render('social_perfiles.html');
 });
 
-// DENUNCIAS USUARIOS
-app.get('/denuncias', (req, res) => {
-    res.render('denuncias_usuarios.html');
+// Juan José se hizo en DENUNCIAS USUARIOS
+app.get('/denuncias_usuarios', async (req, res) => {
+    try {
+        const denuncias = await denuncia.find(); // Obtiene todas las denuncias
+        res.render('denuncias_usuarios', { denuncias }); // Pasa las denuncias a la vista
+    } catch (err) {
+        console.error("Error al obtener las denuncias:", err);
+        res.status(500).send("Error al obtener las denuncias");
+    }
 });
 
-// DENUNCIAS USUARIOS DEV
-app.get('/denuncias_dev', (req, res) => {
-    res.render('denuncias_dev.html');
+// Juan Jose se hizo esta modificacion en DENUNCIAS USUARIOS DEV
+app.get('/denuncias_dev', async (req, res) => {
+    try {
+        const denuncias = await denuncia.find(); 
+        res.render('denuncias_dev', { denuncias }); 
+    } catch (err) {
+        console.error("Error al obtener las denuncias:", err);
+        res.status(500).send("Error al obtener las denuncias");
+    }
 });
 
-// NOTICIAS Y AVISOS
-app.get('/noticias', (req, res) => {
-    res.render('noticias_usuarios.html');
+// Juan Jose se hizo esta modificacion en  NOTICIAS Y AVISOS
+app.get('/noticias_usuarios', async (req, res) => {
+    try {
+        const noticias = await noticia.find(); 
+        const avisos = await aviso.find(); 
+        res.render('noticias_usuarios', { noticias, avisos }); 
+    } catch (err) {
+        console.error("Error al obtener noticias y avisos:", err);
+        res.status(500).send("Error al obtener noticias y avisos");
+    }
 });
 
 // FORMULARIO NOTICIAS ADMIN
@@ -92,16 +136,6 @@ app.get('/administracion_usuarios', (req, res) => {
 
 app.post('/register', async (req, res) => {
     try {
-
-        // Verificar si la cédula ya existe
-        const usuarioExiste = await user.findOne({ cedula: req.body.cedula });
-
-        if (usuarioExiste) {
-            // Si el usuario ya existe, renderiza la página de registro con un mensaje de error
-            return res.render('inicio_sesion_usuario', { error: "Este usuario ya existe, por favor inicie sesion." });
-        }
-
-
         let data = new user({
             nombre: req.body.nombre,
             apellidos: req.body.apellidos,
@@ -117,8 +151,8 @@ app.post('/register', async (req, res) => {
         console.log("Usuario registrado exitosamente");
         res.redirect('/login');
     } catch (err) {
-        console.error("Error al iniciar sesión:", err);
-        res.render('inicio_sesion_usuario', { error: "Error al registar usuario" });
+        console.error("Error al registrar el usuario:", err);
+        res.status(500).send("Error al registrar el usuario");
     }
 });
 
@@ -134,15 +168,74 @@ app.post('/login', async (req, res) => {
                 res.redirect('/'); // Redirige al usuario a la página principal
             } else {
                 console.log("Las contraseñas no coinciden");
-                res.render('inicio_sesion_usuario', { error: "Las contraseñas no coinciden" });
+                res.status(401).send("Las contraseñas no coinciden");
             }
         } else {
             console.log("El usuario no existe");
-            res.render('inicio_sesion_usuario', { error: "El usuario no existe" });
+            res.status(404).send("El usuario no existe");
         }
     } catch (err) {
         console.error("Error al iniciar sesión:", err);
-        res.render('inicio_sesion_usuario', { error: "Error al iniciar sesión" });
+        res.status(500).send("Error al iniciar sesión");
+    }
+});
+
+//Juan Jose, acá se agregaron los 2 post de  noticias y denuncias
+app.post('/noticia', upload.single('archivo_not'), async (req, res) => {
+    try {
+        let data;
+        if (req.body.tipo_noticia === 'aviso') {
+            data = new aviso({
+                titulo: req.body.titulo_noticia,
+                descripcion: req.body.descripcion_noticia,
+                fecha: Date.now(),
+                archivo: req.file ? {
+                    filename: req.file.filename,
+                    contentType: req.file.mimetype
+                } : undefined 
+            });
+        } else {
+            data = new noticia({
+                titulo: req.body.titulo_noticia,
+                descripcion: req.body.descripcion_noticia,
+                fecha: Date.now(),
+                archivo: req.file ? {
+                    filename: req.file.filename,
+                    contentType: req.file.mimetype
+                } : undefined
+            });
+        }
+
+        await data.save();
+        console.log(`${req.body.tipo_noticia} registrado exitosamente`);
+        res.redirect('/noticias_usuarios');
+    } catch (err) {
+        console.error("Error al registrar la noticia:", err);
+        res.status(500).send("Error al registrar la noticia");
+    }
+});
+
+app.post('/denuncia', upload.single('file'), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).send('No se subió ningún archivo o el tipo de archivo no es permitido.');
+        }
+
+        let data = new denuncia({
+            fecha: req.body.fecha,
+            descripcion: req.body.descripcion,
+            archivo: {
+                filename: req.file.filename,
+                contentType: req.file.mimetype
+            }
+        });
+
+        await data.save();
+        console.log("Denuncia registrada exitosamente");
+        res.redirect('/denuncias_dev');
+    } catch (err) {
+        console.error("Error al registrar la denuncia:", err);
+        res.status(500).send("Error al registrar la denuncia");
     }
 });
 

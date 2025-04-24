@@ -16,21 +16,21 @@
     </script>
 </head>
 <body>
-    <div id="header"></div>
+    <div id="header"></div> <!-- Juan jose copiar y pegar todo el main -->
     <main>
-        <div class="cont_general"><!--contenedor creador de noticias y avisos-->
+        <div class="cont_general">
             <h2>Generar Noticia o Aviso</h2>
             <p>¿Que deseas hacer?</p>
 
                 <!-- Seleccion de noticia o aviso -->
+              <form action="/noticia" method="post" enctype="multipart/form-data">   
                 <div class="grupo_noticias-avisos" id="cont_seleccion">
-                        <label for="crear_noticia" class="opciones">
-                            <input type="radio" name="crear_noticia-aviso" id="crear_noticia"> Noticia
-                        </label>
-                        <label for="crear_aviso" class="opciones">
-                            <input type="radio" name="crear_noticia-aviso" id="crear_aviso"> Aviso
-                        </label>
-                </div>
+                    <p>Selecciona:</p>
+                    <select name="tipo_noticia" class="inp_noticias-avisos" id="tipo_noticia-aviso">
+                        <option value="noticia">Noticia</option>
+                        <option value="aviso">Aviso</option>
+                    </select>
+                </div>                  
 
                 <!-- Titulo de la noticia o aviso-->
                 <div class="grupo_noticias-avisos" id="cont_titulo">
@@ -46,7 +46,7 @@
 
                 <!-- Carga de imagenes o videos -->
                 <div class="grupo_noticias-avisos" id="cont_inp-archivos">
-                    <input type="file" name="Imagen_noticia" class="inp_noticias-avisos" id="inp_descripcion">
+                    <input type="file" name="archivo_not" class="inp_noticias-avisos" id="inp_descripcion">
                 </div>
 
                 <!-- Notificacion de publicacion de noticia o aviso -->
@@ -58,9 +58,11 @@
                 <div class="grupo_noticias-avisos" id="cont_botones"><!--botones-->
                     <input type="submit" name="Publicar" value="Publicar" class="boton_noticias-avisos" id="boton_publicar">
                 </div>
-        </div><!--contenedor creador de noticias y avisos-->
+
+            </form>
+        </div>
     </main>
-    <a class="modo__dev" href="/noticias">Modo Usuario</a>
+    <a class="modo__dev" href="/noticias_usuarios.html">Modo Usuario</a>
     <div id="footer"></div>
 </body>
 </html>

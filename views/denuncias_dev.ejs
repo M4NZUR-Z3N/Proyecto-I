@@ -1,0 +1,91 @@
+<!DOCTYPE html><!-- juan jose, copiar y pegar todo el cod -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denuncias Dev</title>
+    <link rel="stylesheet" href="/css/denuncias_dev.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="img/LogoMuniPequeño.ico">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("general/header.html");
+            $("#footer").load("general/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <main>
+        <section class="tabla-container">
+            <div class="filter-container">
+                <input type="date" id="filterDate">
+                <select id="filterStatus">
+                    <option value="">Todos</option>
+                    <option value="Nuevo">Nuevo</option>
+                    <option value="Proceso">En proceso</option>
+                    <option value="Anulado">Anulado</option>
+                    <option value="Solucionado">Solucionado</option>
+                </select>
+                <button id="filterButton">Filtrar</button>
+                <button id="resetButton">Resetear</button>
+            </div>
+        
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Descripción</th>
+                        <th>Archivo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="denunciasTabla">
+                    <% denuncias.forEach(denuncia => { %>
+                        <tr>
+                            <td><%= denuncia.fecha.toISOString().split('T')[0] %></td> 
+                            <td><%= denuncia.descripcion %></td>
+                            <td>
+                                <% if (denuncia.archivo && denuncia.archivo.filename) { %>
+                                    <img src="/uploads/<%= denuncia.archivo.filename %>" alt="Imagen Subida" style="width: 100px; height: auto;">
+                                <% } else { %>
+                                    <span>No hay archivo</span>
+                                <% } %>
+                            </td>
+                            <td>
+                                <select class="estado">
+                                    <option value="Nuevo" <%= denuncia.estado === 'Nuevo' ? 'selected' : '' %>>Nuevo</option>
+                                    <option value="Proceso" <%= denuncia.estado === 'Proceso' ? 'selected' : '' %>>En proceso</option>
+                                    <option value="Anulado" <%= denuncia.estado === 'Anulado' ? 'selected' : '' %>>Anulado</option>
+                                    <option value="Solucionado" <%= denuncia.estado === 'Solucionado' ? 'selected' : '' %>>Solucionado</option>
+                                </select>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        
+            <div class="pagination">
+                <button id="prevPage">Anterior</button>
+                <span id="pageInfo">Página 1</span>
+                <button id="nextPage">Siguiente</button>
+            </div>
+    
+        </section>
+    </main>
+
+    <a class="modo__dev" href="denuncias_usuarios">Modo Usuario</a>
+
+    <script src="js/denuncias_dev.js"></script>
+    
+    <div id="footer"></div>
+
+</body>
+
+</html>
