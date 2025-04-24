@@ -23,13 +23,15 @@
             <button id="btn_registro" type="null">Registrarse</button>
         </div>
         <nav class="cont_general"><!--Contenedor general-->
-<<<<<<< HEAD
             <form action="/login" method="post" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
-=======
-            <form action="submit" class="inicio" id="formulario_inicio_sesion"><!--Inicio de seccion de usuario-->
-                
->>>>>>> 0a69bd5b1fa38e594259d805e654690107f79c87
                 <h2>Inicio de Sesión</h2>
+
+                <!-- Mensaje de error -->
+                <% if (typeof error !== 'undefined') { %>
+                    <div class="mensaje_no_existe">
+                        <p><%= error %></p>
+                    </div>
+                <% } %>
                     <!-- Correo inicio -->
                     <div class="grupo_inicio" id="grupo_email">
                         <input class="inp_inicio" id="inp_email" type="email" name="email" placeholder="Correo">
@@ -68,12 +70,7 @@
                 </div>
             </form><!--Inicio de seccion de usuario Final!-->
 
-<<<<<<< HEAD
             <form action="/register" method="post" class="registro" id="formulario_registro_usuario"><!--Registro de nuevos usuarios-->
-=======
-            <form action="submit" class="registro" id="formulario_registro_usuario"><!--Registro de nuevos usuarios-->
-                
->>>>>>> 0a69bd5b1fa38e594259d805e654690107f79c87
                 <h2 class="">Registrarse</h2>
                     <div class="formulario_registro">
                         <!-- Nombre Usuario -->
@@ -162,6 +159,7 @@
                         <div class="grupo_registro_mensaje" id="grupo_registro_mensaje">
                             <p><i class='bx bxs-error-alt'>Debes completar todos los Campos</i></p>
                         </div>
+
                         <!-- Boton de Registro de Usuario -->
                         <div>
                             <button type="submit" class="buttons_formulario">Registrarse</button>

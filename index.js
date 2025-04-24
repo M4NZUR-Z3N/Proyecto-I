@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 
 // INICIO SESION
 app.get('/login', (req, res) => {
-    res.render('inicio_sesion_usuario.html');
+    res.render('inicio_sesion_usuario');
 });
 
 // INICIO SESION ADMIN
@@ -92,6 +92,16 @@ app.get('/administracion_usuarios', (req, res) => {
 
 app.post('/register', async (req, res) => {
     try {
+
+        // Verificar si la cédula ya existe
+        const usuarioExiste = await user.findOne({ cedula: req.body.cedula });
+
+        if (usuarioExiste) {
+            // Si el usuario ya existe, renderiza la página de registro con un mensaje de error
+            return res.render('inicio_sesion_usuario', { error: "Este usuario ya existe, por favor inicie sesion." });
+        }
+
+
         let data = new user({
             nombre: req.body.nombre,
             apellidos: req.body.apellidos,
@@ -107,8 +117,8 @@ app.post('/register', async (req, res) => {
         console.log("Usuario registrado exitosamente");
         res.redirect('/login');
     } catch (err) {
-        console.error("Error al registrar el usuario:", err);
-        res.status(500).send("Error al registrar el usuario");
+        console.error("Error al iniciar sesión:", err);
+        res.render('inicio_sesion_usuario', { error: "Error al registar usuario" });
     }
 });
 
@@ -124,15 +134,15 @@ app.post('/login', async (req, res) => {
                 res.redirect('/'); // Redirige al usuario a la página principal
             } else {
                 console.log("Las contraseñas no coinciden");
-                res.status(401).send("Las contraseñas no coinciden");
+                res.render('inicio_sesion_usuario', { error: "Las contraseñas no coinciden" });
             }
         } else {
             console.log("El usuario no existe");
-            res.status(404).send("El usuario no existe");
+            res.render('inicio_sesion_usuario', { error: "El usuario no existe" });
         }
     } catch (err) {
         console.error("Error al iniciar sesión:", err);
-        res.status(500).send("Error al iniciar sesión");
+        res.render('inicio_sesion_usuario', { error: "Error al iniciar sesión" });
     }
 });
 
