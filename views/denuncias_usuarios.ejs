@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="adjuntar_enviar">
-                        <div class="file_con">
+                        <div class="file_crear">
                             <label for="file">Adjuntar Archivo:</label>
                             <input type="file" name="file" id="file">
                         </div>
@@ -54,22 +54,23 @@
         </section>
 
         <section class="sec_denun">
-            <h2 class="title_h2">Denuncias Registradas</h2>
+            <h2 class="title_h2">Denuncias</h2>
             <div class="denuncias">
                 <% denuncias.forEach(denuncia => { %>
                     <div class="denun">
-                        <p class="date">Fecha: <%= denuncia.fecha.toISOString().split('T')[0] %></p>
-                        <p class="desc"><strong>Descripción:</strong> <%= denuncia.descripcion %></p>
-                        <% if (denuncia.archivo && denuncia.archivo.filename) { %>
-                            <div class="file_con">
-                                <label>Archivo adjunto:</label>
-                                <img src="/uploads/<%= denuncia.archivo.filename %>" alt="Imagen Subida" style="width: 100px; height: auto;">
-                            </div>
-                        <% } %>
-                        <div class="button_container">
-                            <button class="Edit_denu">Editar</button>
-                            <button class="anular_denu">Anular</button>
+                        <div class="bloque_titulo-fecha">
+                            <strong>Descripción:</strong>
+                            <p class="date">Fecha: <%= denuncia.fecha.toISOString().split('T')[0] %></p>
                         </div>
+                        <div class="bloque_descripcion-imagen">
+                            <p class="desc"> <%= denuncia.descripcion %></p>
+                            <% if (denuncia.archivo && denuncia.archivo.filename) { %>
+                                <div class="file_con">
+                                    <img src="/uploads/<%= denuncia.archivo.filename %>" alt="Imagen Subida" style="width: 100%; height: 100%;">
+                                </div>
+                            <% } %>
+                        </div>
+
                     </div>
                 <% }); %>
             </div>
