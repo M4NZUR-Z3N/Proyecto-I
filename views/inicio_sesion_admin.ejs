@@ -19,8 +19,14 @@
 <div id="header"></div>
     <main>
         <nav class="cont_general"><!--Contenedor general-->
-            <form action="inicio_sesion" class="inicio"><!--Inicio de seccion de usuario-->
+            <form action="/loginAdmin" method="post" class="inicio"><!--Inicio de seccion de usuario-->
                 <h2>Inicio de Sesión</h2>
+
+                <% if (typeof error !== 'undefined') { %>
+                    <div class="mensaje_no_existe">
+                        <p><%= error %></p>
+                    </div>
+                <% } %>
 
                 <span class="formulario_inicio">
                     <!-- Grupo Correo -->
@@ -42,7 +48,7 @@
                 </span>
             </form><!--Inicio de seccion de usuario-->
         </nav><!--Contenedor general-->
-        <a class="modo__dev" href="inicio_sesion_usuario.html">Modo Usuario</a>
+        <a class="modo__dev" href="inicio_sesion_usuario">Modo Usuario</a>
     </main>
 <div id="footer"></div>
 </body>

@@ -16,7 +16,8 @@ let userSchema = new mongoose.Schema({
     password: {type:String, required:true},
     telefono: {type:String, required:true},
     distrito: {type:String, required:true},
-    direccion: {type:String, required:true}
+    direccion: {type:String, required:true},
+    role: { type:String, default: 'user', required:true}
 },{versionKey:false});
 
 //Model

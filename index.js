@@ -1,6 +1,7 @@
 // Requiring module
 const express = require('express');
-
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 
 const bcrypt = require('bcrypt');
 
@@ -14,6 +15,12 @@ const user = require('./models/users.js');
 const noticia = require('./models/noticia.js'); // Juan Jose se agrega noticia para la carga de archivos
 const aviso = require('./models/avisos.js');// Juan Jose se agrega aviso para la carga de archivos
 const denuncia = require('./models/denuncias.js');// Juan Jose se agrega denuncia para la carga de archivos
+app.use(cookieParser());
+app.use(session({
+    secret: "tu-clave-secreta",
+    resave: false,
+    saveUninitialized: false,
+}));
 
 // Juan José esta es la Configuración de almacenamiento de Multer
 const storage = multer.diskStorage({
@@ -60,7 +67,7 @@ app.get('/login', (req, res) => {
 
 // INICIO SESION ADMIN
 app.get('/login_adm', (req, res) => {
-    res.render('inicio_sesion_admin.html');
+    res.render('inicio_sesion_admin');
 });
 
 // OLVIDO SU CONTRASEÑA
@@ -136,6 +143,14 @@ app.get('/administracion_usuarios', (req, res) => {
 
 app.post('/register', async (req, res) => {
     try {
+
+        const usuarioExiste = await user.findOne({ cedula: req.body.cedula });
+
+        if (usuarioExiste) {
+            // Si el usuario ya existe, renderiza la página de registro con un mensaje de error
+            return res.render('inicio_sesion_usuario', { error: "Este usuario ya existe, por favor inicie sesion." });
+        }
+
         let data = new user({
             nombre: req.body.nombre,
             apellidos: req.body.apellidos,
@@ -144,7 +159,8 @@ app.post('/register', async (req, res) => {
             password: await bcrypt.hash(req.body.passwordR, 10),
             telefono: req.body.telefono,
             distrito: req.body.distrito,
-            direccion: req.body.direccion
+            direccion: req.body.direccion,
+            role: 'user'
         });
 
         await data.save();
@@ -152,7 +168,7 @@ app.post('/register', async (req, res) => {
         res.redirect('/login');
     } catch (err) {
         console.error("Error al registrar el usuario:", err);
-        res.status(500).send("Error al registrar el usuario");
+        res.render('inicio_sesion_usuario', { error: "Error al registrar usuario." });
     }
 });
 
@@ -164,6 +180,10 @@ app.post('/login', async (req, res) => {
         if (usuario) {
             const match = await bcrypt.compare(password, usuario.password);
             if (match) {
+                req.session.user = {
+                    username: usuario.nombre,
+                    role: usuario.role // Almacenar el rol
+                };
                 console.log("Se inició sesión correctamente");
                 res.redirect('/'); // Redirige al usuario a la página principal
             } else {
@@ -172,13 +192,36 @@ app.post('/login', async (req, res) => {
             }
         } else {
             console.log("El usuario no existe");
-            res.status(404).send("El usuario no existe");
+            res.render('inicio_sesion_usuario', { error: "Este usuario no existe." });
         }
     } catch (err) {
         console.error("Error al iniciar sesión:", err);
-        res.status(500).send("Error al iniciar sesión");
+        res.render('inicio_sesion_usuario', { error: "Error al iniciar sesion." });
     }
 });
+
+const USERNAME = 'administrador@administrador.com';
+const PASSWORD = 'Administrador';
+
+app.post('/loginAdmin', (req, res) =>{
+    try {
+        const { email, password } = req.body;
+        if (email === USERNAME && password === PASSWORD) {
+            req.session.user = {
+                username: USERNAME,
+                role: 'admin'
+            };
+            console.log("Se inició sesión correctamente");
+            return res.redirect('/'); // Redirige al usuario a la página principal
+        } else {
+            console.log("Las credenciales no son válidas");
+            return res.status(401).send("Las credenciales no son válidas");
+        }
+    } catch (err) {
+        console.error("Error al iniciar sesión:", err);
+        return res.status(500).send("Error al iniciar sesión");
+    }
+})
 
 //Juan Jose, acá se agregaron los 2 post de  noticias y denuncias
 app.post('/noticia', upload.single('archivo_not'), async (req, res) => {

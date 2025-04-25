@@ -89,6 +89,15 @@ a{
     transition: 0.5s;
 }
 
+.mensaje_no_existe{
+    align-items: center;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(251, 93, 93);
+    color: rgb(0, 0, 0);
+}
+
 /* HOVER Y FOCUS */
 .buttons_formulario:hover{
     background-color: rgb(42, 81, 255);
