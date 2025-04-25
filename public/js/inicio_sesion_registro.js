@@ -96,19 +96,3 @@ inputs_registro.forEach((input)=>{
     input.addEventListener("keyup",validarFormulario_registro);
     input.addEventListener("blur",validarFormulario_registro);
 })
-// $formulario.addEventListener("submit",(e)=>{
-//     e.preventDefault();//Evita que se recargue la pagina
-
-//     const $terminos = document.getElementById("terminos");
-//     if(campos.correo && campos.nombre && campos.password && campos.telefono && campos.usuario && $terminos.checked){
-//         document.getElementById("formulario__mensaje").classList.remove("formulario__mensaje-activo");
-//         document.getElementById("formulario__mensaje-exito").classList.add("formulario__mensaje-exito-activo");
-
-//         setTimeout(()=>{
-//             location.reload();
-//         },4000)
-
-//     }else{
-//         document.getElementById("formulario__mensaje").classList.add("formulario__mensaje-activo");
-//     }
-// })

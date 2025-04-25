@@ -179,7 +179,6 @@ main{
 
 .desc {
     text-align: left;
-    border: 1px solid fuchsia;
     min-height: 200px;
     height: auto;
     width: 75%;
@@ -197,7 +196,6 @@ main{
     min-height: 200px;
     height: 100%;
     width: 200px;
-    border: 1px solid fuchsia;
     position: relative;
     top: 0;
 }
