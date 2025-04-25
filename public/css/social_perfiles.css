@@ -13,7 +13,7 @@ main{
 
 .bloque__perfil{
     height: 160px;
-    width: 800px;
+    width: 600px;
     border-radius: 10px;
     background-color: #89aff7;
     box-shadow: 0px 0px 10px #c7c7c7;
@@ -21,7 +21,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
 }
 
 .bloque__perfil img{
@@ -36,16 +36,16 @@ main{
 }
 
 .datos__principales p{
+    background-color: #2454ad;
     display: flex;
     flex-direction: column;
     justify-content: left;
+    padding: 4px 10px;
+    border-radius: 5px;
+    color: white;
     align-items: center;
     white-space: nowrap;
     width: auto;
-}
-
-.datos__descripcion{
-    width: 300px;
 }
 
 .botones__cambio-pagina{
