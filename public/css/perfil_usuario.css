@@ -18,6 +18,7 @@ main{
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     box-shadow: 10px 10px 0px black;
 }
 
@@ -62,12 +63,6 @@ main{
     align-items: center;
 }
 
-.perfil__info--descripcion{
-    display: block;
-    gap: 5px;
-    height: 200px;
-}
-
 .perfil__dato{
     height: 85%;
     width: 100%;
@@ -87,8 +82,7 @@ textarea.perfil__dato {
     height: 50px;
     width: 300px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     white-space: nowrap;
 }
 
@@ -116,10 +110,6 @@ textarea.perfil__dato {
 
 .perfil__boton--cerrar-sesion:hover {
     background-color: #d9534f;
-}
-
-#input-descripcion{
-    height: 80%;
 }
 
 

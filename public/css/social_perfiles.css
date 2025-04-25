@@ -35,7 +35,7 @@ main{
     gap: 10px;
 }
 
-.datosprincipales p{
+.datos__principales p{
     background-color: #2454ad;
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@ main{
     width: auto;
 }
 
-.botonescambio-pagina{
+.botones__cambio-pagina{
     display: flex;
     justify-content: space-between;
     align-items: center;
