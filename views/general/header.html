@@ -15,7 +15,6 @@
     </div>
     <!-- Boton para cambiar inicio sesion / Perfil temporalmente  -->
     <input type="checkbox" id="check_Inicio-Perfil">
-    <label class="boton_Inicio-Perfil" for="check_Inicio-Perfil">Cambiar Mi Perfil</label>
 </header>
 <script>
 let toggleButtonCheckBox;
@@ -28,15 +27,13 @@ toggleButtonDEMO = document.querySelector(".boton_Inicio-Perfil");
 botonIniciarSesion = document.querySelector("#iniciarSesion_Btn");
 botonPerfil = document.querySelector("#perfil_Btn");
 
-function updateToggleButtonText() {
-    if (toggleButtonCheckBox.checked) {
-        toggleButtonDEMO.textContent = "Cambiar Iniciar Sesion";
+function mostrar_InicioSesion_MiPerfil() {
+    if (inicioSesion) {
         botonPerfil.classList.add("visualizar");
         botonIniciarSesion.classList.add("no-visualizar");
         botonPerfil.classList.remove("no-visualizar");
         botonIniciarSesion.classList.remove("visualizar");
     } else {
-        toggleButtonDEMO.textContent = "Cambiar Mi Perfil";
         botonPerfil.classList.add("no-visualizar");
         botonIniciarSesion.classList.add("visualizar");
         botonPerfil.classList.remove("visualizar");
@@ -45,7 +42,7 @@ function updateToggleButtonText() {
 }
 
 // Llamar a la función al cargar la página para establecer el texto inicial
-updateToggleButtonText();
+mostrar_InicioSesion_MiPerfil();
 
 // Agregar un evento para escuchar cambios en el checkbox
 toggleButtonCheckBox.addEventListener('change', updateToggleButtonText);
