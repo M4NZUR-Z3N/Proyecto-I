@@ -103,7 +103,7 @@ app.get('/recuperar_contraseña', (req, res) => {
 
 // PERFIL USUARIO
 app.get('/perfil', isAuthenticated, (req, res) => {
-    res.render('perfil_usuario.html');
+    res.render('perfil_usuario', { user: req.session.user });
 });
 
 // SOCIAL PERFILES
@@ -203,6 +203,9 @@ app.post('/login', async (req, res) => {
             if (match) {
                 req.session.user = {
                     username: usuario.nombre,
+                    telefono: usuario.telefono,
+                    distrito: usuario.distrito,
+                    correo: usuario.correo,
                     role: usuario.role // Almacenar el rol
                 };
                 console.log("Se inició sesión correctamente");

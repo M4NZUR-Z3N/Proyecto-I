@@ -5,7 +5,7 @@
     const toggleButton = document.getElementById('button_noticias_avisos');
 
     const checkScreenSize = () => {
-        if(window.innerWidth >= 900) {//si la pantalla es grande, se tienen que mostrar ambas columnas, sin el boton
+        if(window.innerWidth >= 2000) {//si la pantalla es grande, se tienen que mostrar ambas columnas, sin el boton
             columna_avisos.style.display = 'block';
             columna_noticias.style.display = 'block';
             toggleButton.style.display = 'none';
