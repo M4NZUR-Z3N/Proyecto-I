@@ -10,12 +10,11 @@ a{
     text-decoration: none;
     color: black;
 }
-.cont_general{
-    /* background-color: azure; */
+/* .cont_general{
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 20px;
-}
+} */
 
 h3{
     display: block;
@@ -24,11 +23,12 @@ h3{
 }
 
 .cont_botton_aviso{
-    display: block;
-    justify-content: end;
+    display: flex;
+    width: 35%;
+    justify-content:space-between;
 }
 
-#button_noticias_avisos{
+#button_noticias, #button_avisos{
     display: flex;
     border: none;
     width: 120px;
@@ -36,8 +36,13 @@ h3{
     padding: 10px;
     font-size: 20px;
     border-radius: 10px;
-    transition: 0.8s;
-    display: none;
+    transition: transform 0.8s, background-color 0.8s;
+}
+
+#button_avisos:focus, #button_noticias:focus {
+    /*transform: translateX(50px);*/ /*Mueve el botón 50px hacia la derecha*/
+    background-color: rgb(42, 81, 255); /*Cambia el color de fondo*/
+    color: white;
 }
 
 input{
@@ -164,19 +169,6 @@ input{
 
 /* DISPLAY DE AVISOS FIN */
 
-.reacciones{
-    height: 40px;
-    width: 120px;
-    padding: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bxs-like, .like, .bxs-dislike, .dislike{
-    color: white;
-}
-
 /* HOVER */
 .bx:hover{
     color: rgb(50, 129, 225);
@@ -186,7 +178,7 @@ input:checked  .bx{
     color: rgb(50, 129, 225);
 }
 
-#button_noticias_avisos:hover{
+#button_avisos:hover, #button_noticias:hover{
     background-color: rgb(42, 81, 255);
     color: white;
 }
