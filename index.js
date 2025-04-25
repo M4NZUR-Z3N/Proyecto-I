@@ -22,6 +22,14 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+function isAuthenticated(req, res, next) {
+    if (req.session.user) {
+        return next(); // El usuario está autenticado, continuar con la siguiente función
+    }
+    // Si no está autenticado, redirigir a la página de inicio de sesión
+    res.redirect('/login');
+}
+
 function isAdmin(req, res, next) {
     if (req.session.user && req.session.user.role === 'admin') {
         return next(); // El usuario es admin, continuar con la siguiente función
@@ -94,17 +102,17 @@ app.get('/recuperar_contraseña', (req, res) => {
 });
 
 // PERFIL USUARIO
-app.get('/perfil', (req, res) => {
+app.get('/perfil', isAuthenticated, (req, res) => {
     res.render('perfil_usuario.html');
 });
 
 // SOCIAL PERFILES
-app.get('/social', (req, res) => {
+app.get('/social', isAuthenticated, (req, res) => {
     res.render('social_perfiles.html');
 });
 
 // Juan José se hizo en DENUNCIAS USUARIOS
-app.get('/denuncias_usuarios', async (req, res) => {
+app.get('/denuncias_usuarios', isAuthenticated, async (req, res) => {
     try {
         const denuncias = await denuncia.find(); // Obtiene todas las denuncias
         res.render('denuncias_usuarios', { denuncias }); // Pasa las denuncias a la vista
