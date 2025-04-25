@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social</title>
+    <link rel="stylesheet" href="css/social_perfiles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/LogoMuniPequeño.ico">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("general/header.html");
+            $("#footer").load("general/footer.html");
+        });
+    </script>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <main>
+        <h1>Perfiles de la comunidad de Montes de Oca</h1>
+        <nav class="bloque__perfiles">
+            <% usuarios.forEach(usuario => { %>
+                <div class="bloque__perfil">
+                    <img src="img/ImagenMiPerfilVacio.png" alt="">
+                    <div class="datos__principales">
+                        <p><strong>Nombre:</strong><span><%= usuario.nombre %> <%= usuario.apellidos %></span></p>
+                        <p><strong>Teléfono:</strong><span><%= usuario.telefono %></span></p>
+                        <p><strong>Distrito:</strong><span><%= usuario.distrito %></span></p>
+                    </div>
+                </div>
+            <% }); %>
+        </nav>
+    </main>
+
+    <div id="footer"></div>
+
+</body>
+</html>

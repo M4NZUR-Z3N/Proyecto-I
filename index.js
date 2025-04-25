@@ -107,8 +107,14 @@ app.get('/perfil', isAuthenticated, (req, res) => {
 });
 
 // SOCIAL PERFILES
-app.get('/social', isAuthenticated, (req, res) => {
-    res.render('social_perfiles.html');
+app.get('/social', isAuthenticated, async (req, res) => {
+    try {
+        const usuarios = await user.find();
+        res.render('social_perfiles', { usuarios }); 
+    } catch (err) {
+        console.error("Error al obtener los usuarios:", err);
+        res.status(500).send("Error al obtener los usuarios");
+    }
 });
 
 // Juan José se hizo en DENUNCIAS USUARIOS
