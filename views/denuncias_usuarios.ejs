@@ -76,7 +76,10 @@
             </div>
         </section>
 
-        <a class="modo__dev" href="/denuncias_dev">Modo Administrador</a>
+        <% if (user && user.role === 'admin') { %>
+            <a class="modo__dev" href="/denuncias_dev">Modo Administrador</a>
+        <% } %>
+        
 
     </main>
 

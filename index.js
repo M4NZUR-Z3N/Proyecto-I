@@ -22,6 +22,14 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+function isAdmin(req, res, next) {
+    if (req.session.user && req.session.user.role === 'admin') {
+        return next(); // El usuario es admin, continuar con la siguiente función
+    }
+    // Si no es admin, redirigir o enviar un mensaje de error
+    return res.status(403).send("Acceso denegado: se requiere rol de administrador.");
+}
+
 // Juan José esta es la Configuración de almacenamiento de Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -53,6 +61,11 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));// se empieza a buscar en la carpeta public. se sigue un orden en gerarquia, pasando de public a views si no se encuentra el documento
 app.use(express.static(path.join(__dirname, 'views')));// se empieza a buscar en la carpeta views.
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use((req, res, next) => {
+    res.locals.user = req.session.user; // Hacer la sesión disponible en todas las vistas
+    next();
+});
+
 // Rutas
 
 // Pagina Madre
@@ -102,7 +115,7 @@ app.get('/denuncias_usuarios', async (req, res) => {
 });
 
 // Juan Jose se hizo esta modificacion en DENUNCIAS USUARIOS DEV
-app.get('/denuncias_dev', async (req, res) => {
+app.get('/denuncias_dev', isAdmin, async (req, res) => {
     try {
         const denuncias = await denuncia.find(); 
         res.render('denuncias_dev', { denuncias }); 
@@ -125,7 +138,7 @@ app.get('/noticias_usuarios', async (req, res) => {
 });
 
 // FORMULARIO NOTICIAS ADMIN
-app.get('/noticias_avisos_admin', (req, res) => {
+app.get('/noticias_avisos_admin', isAdmin, (req, res) => {
     res.render('noticias_avisos_admin.html');
 });
 
@@ -135,7 +148,7 @@ app.get('/servicios', (req, res) => {
 });
 
 // ADMINISTRACION DE USUARIOS
-app.get('/administracion_usuarios', (req, res) => {
+app.get('/administracion_usuarios', isAdmin, (req, res) => {
     res.render('administracion_usuarios.html');
 });
 
@@ -223,8 +236,18 @@ app.post('/loginAdmin', (req, res) =>{
     }
 })
 
+app.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            console.error("Error al cerrar sesión:", err);
+            return res.status(500).send("Error al cerrar sesión");
+        }
+        res.redirect('/login'); // Redirige al usuario a la página de inicio de sesión
+    });
+});
+
 //Juan Jose, acá se agregaron los 2 post de  noticias y denuncias
-app.post('/noticia', upload.single('archivo_not'), async (req, res) => {
+app.post('/noticia', isAdmin, upload.single('archivo_not'), async (req, res) => {
     try {
         let data;
         if (req.body.tipo_noticia === 'aviso') {
@@ -258,7 +281,7 @@ app.post('/noticia', upload.single('archivo_not'), async (req, res) => {
     }
 });
 
-app.post('/denuncia', upload.single('file'), async (req, res) => {
+app.post('/denuncia', isAdmin, upload.single('file'), async (req, res) => {
     try {
         if (!req.file) {
             return res.status(400).send('No se subió ningún archivo o el tipo de archivo no es permitido.');

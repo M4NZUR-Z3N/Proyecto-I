@@ -6,6 +6,11 @@ main{
     gap: 30px;
 }
 
+.form_cerrar_sesion{
+    height: 100%;
+    width: 100%;
+}
+
 .perfil{
     background-color: #1d3893;
     height: 450px;
@@ -116,6 +121,7 @@ textarea.perfil__dato {
 #input-descripcion{
     height: 80%;
 }
+
 
 /* JS */
 

@@ -32,7 +32,9 @@
         </div>
         <div class="perfil__botones">
             <button class="perfil__boton perfil__boton--editar" id="editarBtn">Editar</button>
-            <button class="perfil__boton perfil__boton--cerrar-sesion">Cerrar Sesión</button>
+            <form action="/logout" method="post" class="form_cerrar_sesion">
+                <button type="submit" class="perfil__boton perfil__boton--cerrar-sesion">Cerrar Sesión</button>
+            </form>
         </div>
     </main>
     <div id="footer"></div>
